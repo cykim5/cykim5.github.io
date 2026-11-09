@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Claire Kim</title>
-  <meta name="description" content="Claire Kim. MS at Carnegie Mellon. Strategy and operations work at the point where new technology leaves the lab.">
+  <meta name="description" content="Claire Kim. MS at Carnegie Mellon. Building automation and applied AI for laboratory and physical systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,9 +17,9 @@
     <div class="wrap nav-inner">
       <a href="#top" class="logo">Claire Kim</a>
       <nav aria-label="Sections">
-        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
+        <a href="#stack">Stack</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -28,57 +28,133 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="wrap">
-        <p class="eyebrow">MS, Carnegie Mellon University, School of Computer Science</p>
-        <h1>I work where new technology leaves the lab and has to run in a real operation.</h1>
+        <p class="eyebrow">MS Automated Sciences / Carnegie Mellon SCS</p>
+        <h1>I build automation for labs and physical systems, then make it survive daily use.</h1>
         <p class="lede">
-          Master's student in Automated Sciences at Carnegie Mellon, with a background in
-          biotech operations and physical AI deployment. My focus is deployment rather than
-          research: deciding what to automate, planning the rollout, and making it hold up
-          in daily use.
+          Hardware, software and the operational work in between: CAD and 3D printed
+          instrumentation, AI agents over scientific data, and the deployment planning
+          that decides what should be automated in the first place.
         </p>
         <p class="lede">
-          Seeking <strong>Summer 2027</strong> internships in strategy and business roles
-          across tech, consulting and venture capital.
+          Seeking <strong>Summer 2027</strong> internships in automation, robotics
+          deployment and applied AI.
         </p>
         <div class="cta">
-          <a class="btn btn-primary" href="mailto:cykim522@gmail.com">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Email me
-          </a>
-          <a class="btn" href="resume.pdf">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-            Resume
-          </a>
-          <a class="btn" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17"><path d="M5 9v10M5 5.5v.01M10 19v-6a3 3 0 0 1 6 0v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            LinkedIn
-          </a>
+          <a class="btn btn-primary" href="mailto:cykim522@gmail.com">Email me</a>
+          <a class="btn" href="https://github.com/cykim5" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </section>
 
     <section class="proof" aria-labelledby="proof-heading">
       <div class="wrap">
-        <h2 id="proof-heading" class="sr-only">Results</h2>
+        <h2 id="proof-heading" class="sr-only">Selected results</h2>
         <dl class="stats">
           <div>
-            <dt>Process time removed from a clinical diagnostics workflow</dt>
-            <dd><span class="figure">31%</span></dd>
-          </div>
-          <div>
-            <dt>Faster batch processing after a sample storage redesign</dt>
-            <dd><span class="figure">37.5%</span></dd>
-          </div>
-          <div>
-            <dt>Retail locations in the robotics deployment roadmap I built</dt>
-            <dd><span class="figure">150+</span></dd>
-          </div>
-          <div>
-            <dt>Manual review cut from three hours to under thirty minutes</dt>
             <dd><span class="figure">6x</span></dd>
+            <dt>Faster video review after I prototyped and shipped an annotation tool</dt>
+          </div>
+          <div>
+            <dd><span class="figure">38</span></dd>
+            <dt>Proven disease variants found in the top 500, against 18 for AlphaMissense</dt>
+          </div>
+          <div>
+            <dd><span class="figure">25</span></dd>
+            <dt>Motor positions verified in simulation before any part was printed</dt>
+          </div>
+          <div>
+            <dd><span class="figure">264</span></dd>
+            <dt>Laboratory workflows mapped into a single non-overlapping structure</dt>
           </div>
         </dl>
       </div>
+    </section>
+
+    <section id="projects" class="section wrap">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>OT-2 Tilting Plate Adapter</h3>
+          <p class="tags"><span>CadQuery</span><span>Python</span><span>3D printing</span><span>Stepper control</span></p>
+        </div>
+        <img class="project-img" src="images/tilt-adapter.png" alt="Computer model of the tilt adapter, level on the left and tilted back on the right" width="990" height="350" loading="lazy">
+        <p>A 3D printed adapter that occupies one deck slot of an Opentrons OT-2 liquid handling robot and tilts the plate so liquid pools to one side of each well. Two stepper driven cams sit under a platform pivoting on a fixed ball, giving tilt in any direction up to 17 degrees.</p>
+        <p>Written as a parametric CAD model rather than drawn by hand, so dimensions regenerate from a parameter block. Before anything was printed I simulated 25 motor position combinations and checked every one for collisions and for the platform staying seated.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Gene-ius</h3>
+          <p class="tags"><span>LLM agents</span><span>Knowledge graphs</span><span>Python</span><span>Team of 5</span></p>
+        </div>
+        <p>An AI agent that helps laboratories interpret genetic variants of uncertain significance, which account for roughly a third of variants in ClinVar. Across 23 retina and heart genes it ranks which variants to test first, then answers whether a variant is harmful, how it breaks the protein, which disease follows, and what treatment strategy might fit.</p>
+        <p>Evaluated with a time machine design: the model sees only data available in January 2023 and is graded on variants experts resolved afterwards, so no variant is ever evidence for itself. It found 38 later-proven disease variants in its top 500, against 18 for AlphaMissense.</p>
+        <p class="links">
+          <a href="https://gene-ius-app.vercel.app" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/cykim5/Gene-ius" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Biological Workflow Map</h3>
+          <p class="tags"><span>Taxonomy</span><span>Python</span><span>Data modeling</span></p>
+        </div>
+        <p>A map of 264 wet-lab workflows across eight domains, built so that every workflow has exactly one place. Each is filed by what it produces, which is the only attribute that does not overlap, so the structure holds where field-based and technique-based classifications collapse.</p>
+        <p>It is the base layer for assessing which laboratory work is worth automating. Feasibility and cost are scored against it rather than built into it, so the structure stays stable as robots improve.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Automation Assessment</h3>
+          <p class="tags"><span>JavaScript</span><span>Scoring model</span></p>
+        </div>
+        <p>A tool that ranks which tasks in a small manufacturing operation to automate first. Each task is scored on robot feasibility (action, object, environment) and on business fit from payback period and strategic value, then placed into quick wins, strategic bets and tasks to skip.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Lab Automation Payback</h3>
+          <p class="tags"><span>JavaScript</span><span>Cost modeling</span></p>
+        </div>
+        <p>Estimates when automating a laboratory step pays for itself, from sample volume, hands-on time, rerun rates, equipment cost and running costs. It shows what drives the savings and the sample volume at which automation starts to make sense.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Pool App and MeowBox</h3>
+          <p class="tags"><span>Product</span><span>Figma</span></p>
+        </div>
+        <p>Co-founded Pool App as product and UI/UX lead, defining user needs, prioritizing features and designing the workflows and prototypes. MeowBox won its pitch competition and shipped a working build.</p>
+      </article>
+    </section>
+
+    <section id="stack" class="section wrap">
+      <h2>Stack</h2>
+      <dl class="stack">
+        <div>
+          <dt>Languages</dt>
+          <dd>Python, R, JavaScript, Google Apps Script</dd>
+        </div>
+        <div>
+          <dt>Hardware and CAD</dt>
+          <dd>CadQuery, FDM 3D printing, stepper and linear actuators, Raspberry Pi</dd>
+        </div>
+        <div>
+          <dt>Lab automation</dt>
+          <dd>Opentrons OT-2, liquid handling, LIMS workflows, SOP authoring through QA</dd>
+        </div>
+        <div>
+          <dt>AI and data</dt>
+          <dd>LLM agents and tool use, knowledge graphs, statistical analysis in R</dd>
+        </div>
+        <div>
+          <dt>Design and delivery</dt>
+          <dd>Figma, Git, AI coding tools for rapid prototyping</dd>
+        </div>
+      </dl>
     </section>
 
     <section id="experience" class="section wrap">
@@ -93,9 +169,10 @@
           <p class="meta">Physical AI startup</p>
         </div>
         <ul>
-          <li>Built a prioritization framework scoring candidate tasks on automation feasibility (action, object, environment) and business fit (financial return, strategic value), working on site across seven locations of one of Korea's largest retail chains.</li>
+          <li>Benchmarked existing video annotation tools, found none fit the workflow, and prototyped a replacement with bulk upload, automatic file sorting and vision model annotation.</li>
+          <li>Leadership asked to productize it. I led a two week sprint with two interns plus engineers and IT, cutting three hours of manual work per hour of footage to under thirty minutes of review, with a team of ten using it daily.</li>
+          <li>Built a task prioritization framework scoring automation feasibility (action, object, environment) against business fit, working on site across seven locations of a major retail chain.</li>
           <li>Developed a pilot-to-scale roadmap for deployment across 150+ locations by 2028 and presented it to the client's executive team.</li>
-          <li>Prototyped a video annotation tool when no existing product fit the workflow. Leadership asked to productize it, and the two-week sprint I led cut three hours of manual work per hour of footage to under thirty minutes of review, with a team of ten using it daily.</li>
         </ul>
       </article>
 
@@ -109,8 +186,8 @@
         </div>
         <ul>
           <li>Diagnosed a bottleneck in plasma isolation and identified a centrifuge optimization that reduced process time by 31%.</li>
-          <li>Proposed moving sample storage to 2D barcoded matrix tubes, approved as a Q4 2025 core company initiative, cutting processing time 37.5% per batch.</li>
-          <li>Connected the automation, data systems, IT and QA teams to how the lab actually ran, and rewrote the standard operating procedure through QA.</li>
+          <li>Proposed moving sample storage to 2D barcoded matrix tubes for automated liquid handling and traceability. Approved as a Q4 2025 core company initiative, cutting processing time 37.5% per batch.</li>
+          <li>Supported automation of cfDNA extraction on Hamilton platforms, and worked across automation, data systems, IT and QA to connect the engineering change to how the lab actually ran.</li>
         </ul>
       </article>
 
@@ -142,90 +219,26 @@
           <li>Synthetic biology, nanocatalyst synthesis and stem cell research across three laboratories.</li>
         </ul>
       </article>
-    </section>
 
-    <section id="projects" class="section wrap">
-      <h2>Projects</h2>
-      <div class="cards">
-
-        <article class="card card-wide">
-          <h3>Gene-ius</h3>
-          <p class="role">Nucleate Pittsburgh BioHack 2026, team of five</p>
-          <p>An AI agent that helps laboratories interpret genetic variants of uncertain significance, which account for roughly a third of variants in ClinVar. Across 23 retina and heart genes it ranks which variants to test first and explains whether a variant is harmful, how it breaks the protein, which disease follows, and what treatment strategy might fit.</p>
-          <p class="result">Trained only on data available in 2023 and graded on variants experts resolved later, it identified 38 proven disease variants in its top 500, against 18 for AlphaMissense.</p>
-          <p class="links">
-            <a href="https://gene-ius-app.vercel.app" target="_blank" rel="noopener">Live demo<svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="https://github.com/cykim5/Gene-ius" target="_blank" rel="noopener">GitHub<svg aria-hidden="true" viewBox="0 0 24 24" width="13" height="13"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </p>
-        </article>
-
-        <article class="card card-wide">
-          <img class="card-img" src="images/tilt-adapter.png" alt="Computer model of the tilt adapter, level on the left and tilted back on the right" width="990" height="350" loading="lazy">
-          <h3>OT-2 Tilting Plate Adapter</h3>
-          <p class="role">Laboratory hardware, CAD and 3D printing</p>
-          <p>A 3D printed adapter that occupies one deck slot of an Opentrons OT-2 liquid handling robot and tilts the plate so liquid pools to one side of each well. Two stepper motors turn cams beneath a platform pivoting on a fixed ball, giving tilt in any direction up to 17 degrees.</p>
-          <p class="result">Built as a parametric CAD model and verified in simulation across 25 motor positions for collisions before printing.</p>
-        </article>
-
-        <article class="card">
-          <h3>Automation Assessment</h3>
-          <p class="role">Web tool, physical AI deployment</p>
-          <p>Helps a small manufacturer decide which tasks to automate with robots first. Each task is scored on robot feasibility and business fit, then sorted into quick wins, strategic bets and tasks to skip.</p>
-        </article>
-
-        <article class="card">
-          <h3>Lab Automation Payback</h3>
-          <p class="role">Web tool, laboratory operations</p>
-          <p>Estimates when automating a laboratory step pays for itself, from volume, hands-on time, rerun rates and running costs, and shows the sample volume where automation begins to make sense.</p>
-        </article>
-
-        <article class="card">
-          <h3>Biological Workflow Map</h3>
-          <p class="role">Taxonomy and research</p>
-          <p>A MECE map of 264 wet-lab workflows across eight domains, built so each workflow has exactly one place. It is the base layer for assessing which laboratory work is worth automating.</p>
-        </article>
-
-        <article class="card">
-          <h3>Pool App</h3>
-          <p class="role">Co-Founder, Product and UI/UX Lead</p>
-          <p>Led early product strategy by defining user needs and prioritizing features, and designed the workflows and prototypes in Figma.</p>
-        </article>
-
-        <article class="card">
-          <h3>MeowBox</h3>
-          <p class="role">Pitch competition winner</p>
-          <p>Designed the product in Figma and shipped a working build.</p>
-        </article>
-
-        <article class="card">
-          <h3>Arti</h3>
-          <p class="role">Co-Founder, UC Berkeley</p>
-          <p>Built a business model integrating sustainability and charitable giving, and led the market research guiding product and branding.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="education" class="section wrap">
-      <h2>Education</h2>
       <div class="edu">
+        <h3 class="edu-title">Education</h3>
         <div class="edu-row">
           <div>
-            <h3>Carnegie Mellon University</h3>
+            <p class="school">Carnegie Mellon University</p>
             <p class="role">MS, Automated Sciences: Biological Experimentation, School of Computer Science</p>
           </div>
           <p class="meta">Expected May 2028</p>
         </div>
         <div class="edu-row">
           <div>
-            <h3>University of California, Berkeley</h3>
+            <p class="school">University of California, Berkeley</p>
             <p class="role">BS, Microbial Biology</p>
           </div>
           <p class="meta">2025</p>
         </div>
         <div class="edu-row">
           <div>
-            <h3>University of Wisconsin-Madison</h3>
+            <p class="school">University of Wisconsin-Madison</p>
             <p class="role">Biochemistry, first two years</p>
           </div>
           <p class="meta">2021 to 2023</p>
@@ -235,10 +248,11 @@
 
     <section id="contact" class="contact">
       <div class="wrap">
-        <h2>Let's talk</h2>
-        <p>I am always glad to discuss physical AI, laboratory automation, or what it takes to put new technology into a working operation.</p>
+        <h2>Get in touch</h2>
+        <p>Happy to talk about lab automation, physical AI deployment, or getting a prototype to the point where other people rely on it.</p>
         <div class="cta">
           <a class="btn btn-primary" href="mailto:cykim522@gmail.com">cykim522@gmail.com</a>
+          <a class="btn btn-onDark" href="https://github.com/cykim5" target="_blank" rel="noopener">GitHub</a>
           <a class="btn btn-onDark" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
@@ -247,7 +261,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p>Claire Kim, Pittsburgh, Pennsylvania. Fluent in English and Korean.</p>
+      <p>Claire Kim / Pittsburgh, Pennsylvania / English and Korean</p>
     </div>
   </footer>
 </body>
