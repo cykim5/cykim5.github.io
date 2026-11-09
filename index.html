@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire Kim</title>
+  <meta name="description" content="Claire Kim. MS at Carnegie Mellon. Strategy and operations at the point where new technology leaves the lab.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo">Claire Kim</a>
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow">MS, Carnegie Mellon University</p>
+      <h1>I work where new technology leaves the lab and has to work in the real world.</h1>
+      <p class="lede">
+        I'm a master's student in Automated Sciences at CMU's School of Computer Science.
+        My background is in biotech operations and physical AI deployment. I'm interested in
+        deployment, not research: figuring out what to automate, how to roll it out, and
+        how to make it stick.
+      </p>
+      <p class="lede">Looking for <strong>Summer 2027</strong> internships in strategy and business roles across tech, consulting, and VC.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:cykim522@gmail.com">Email me</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <section id="experience" class="wrap section">
+      <h2>Experience</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>RLWRLD</h3>
+            <p class="role">Robotics Transformation Consulting Intern</p>
+          </div>
+          <p class="meta">Physical AI startup</p>
+        </div>
+        <ul>
+          <li>Worked on site across 7 locations of one of Korea's largest retail chains.</li>
+          <li>Built a prioritization framework scoring candidate tasks on automation feasibility (action, object, environment) and business fit (financial return, strategic value).</li>
+          <li>Developed a pilot-to-scale roadmap for deployment across 150+ locations by 2028 and presented it to the client's executive team.</li>
+          <li>Found no video annotation tool fit our workflow, so I prototyped one with AI coding tools. Leadership asked to productize it. I led a 2-week sprint that cut 3 hours of manual work per hour of footage to under 30 minutes of review. A team of 10 used it daily by the end of my internship.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>BillionToOne</h3>
+            <p class="role">Clinical Laboratory Associate II</p>
+          </div>
+          <p class="meta">Cancer diagnostics, Menlo Park, CA</p>
+        </div>
+        <ul>
+          <li>Diagnosed a bottleneck in plasma isolation and identified a centrifuge optimization that reduced process time by 31%.</li>
+          <li>Proposed moving sample storage to 2D barcoded matrix tubes. It was approved as a Q4 2025 core company initiative and cut processing time 37.5% per batch.</li>
+          <li>Linked the automation, data systems, IT, and QA teams to how the lab actually ran, and rewrote the SOP through QA.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>Samsung Biologics</h3>
+            <p class="role">Global Intern</p>
+          </div>
+          <p class="meta">Songdo, South Korea, Jun to Aug 2025</p>
+        </div>
+        <ul>
+          <li>Built a centralized database unifying 2,000+ filter specifications from five manufacturing plants.</li>
+          <li>Updated filter integrity testing troubleshooting protocols to reduce false failures and deviations, lowering material waste and cost.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>Research</h3>
+            <p class="role">Isayev Lab (CMU), UC Berkeley, Korea University, UW-Madison</p>
+          </div>
+          <p class="meta">2022 to present</p>
+        </div>
+        <ul>
+          <li>LLM agent project at the Isayev Lab, Carnegie Mellon.</li>
+          <li>Statistical analysis in R on avian influenza spread, co-authored preprint (LeBoa et al., 2025).</li>
+          <li>Synthetic biology, nanocatalyst synthesis, and stem cell research across three labs.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="projects" class="wrap section">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card featured">
+          <h3>Gene-ius</h3>
+          <p class="role">Nucleate Pittsburgh BioHack 2026, team of 5</p>
+          <p>An AI agent that helps labs interpret genetic variants of uncertain significance (VUS), which make up about a third of variants in ClinVar. For variants in 23 retina and heart genes, it ranks which ones to test first and explains whether a variant is harmful, how it breaks the protein, which disease follows, and what treatment strategy might fit.</p>
+          <p>Tested by training only on 2023 data and grading on variants experts resolved later. It found 38 later-proven disease variants in its top 500, compared with 18 for AlphaMissense.</p>
+          <div class="links">
+            <a href="https://gene-ius-app.vercel.app" target="_blank" rel="noopener">Live demo</a>
+            <a href="https://github.com/cykim5/Gene-ius" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+        <article class="card wide">
+          <h3>Automation Assessment</h3>
+          <p class="role">Web tool, physical AI deployment</p>
+          <p>Helps a small manufacturer decide which tasks to automate with robots first. Each task is scored on robot feasibility (action, object, environment) and business fit (payback and strategic value), then sorted into quick wins, strategic bets, and tasks to skip.</p>
+          <div class="links">
+            <a href="https://cykim5.github.io/automation-assessment" target="_blank" rel="noopener">Try it</a>
+            <a href="https://github.com/cykim5/automation-assessment" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+        <article class="card wide">
+          <h3>Lab Automation Payback</h3>
+          <p class="role">Web tool, lab operations</p>
+          <p>Estimates when automating a lab step pays for itself, based on volume, hands-on time, rerun rates, and running costs. Shows what drives the savings and the sample volume where automation starts to make sense.</p>
+          <div class="links">
+            <a href="https://cykim5.github.io/lab-automation-payback" target="_blank" rel="noopener">Try it</a>
+            <a href="https://github.com/cykim5/lab-automation-payback" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+        <article class="card featured">
+          <img class="card-img" src="images/tilt-adapter.png" alt="3D model of the tilt adapter, level on the left and tilted back on the right" width="990" height="350" loading="lazy">
+          <h3>OT-2 Tilting Plate Adapter</h3>
+          <p class="role">Lab hardware, CAD and 3D printing</p>
+          <p>A 3D printed adapter that sits in one deck slot of an Opentrons OT-2 liquid handling robot and tilts the plate, so liquid pools to one side of each well. Two stepper motors turn cams under the platform, which pivots on a fixed ball, so it can tilt in any direction, up to 17 degrees.</p>
+          <p>Built as a parametric CAD model and checked in simulation across 25 motor positions for collisions before printing.</p>
+        </article>
+        <article class="card">
+          <h3>Pool App</h3>
+          <p class="role">Co-Founder, Product and UI/UX Lead</p>
+          <p>Led early product strategy by defining user needs and prioritizing features. Designed user workflows and prototypes in Figma.</p>
+        </article>
+        <article class="card">
+          <h3>MeowBox</h3>
+          <p class="role">Pitch competition winner</p>
+          <p>Designed the product in Figma and shipped a working build.</p>
+        </article>
+        <article class="card">
+          <h3>Arti</h3>
+          <p class="role">Co-Founder, UC Berkeley</p>
+          <p>Built a business model integrating sustainability and charitable giving. Led market research to guide product and branding.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="wrap section">
+      <h2>Education</h2>
+      <div class="edu">
+        <div class="edu-row">
+          <div><h3>Carnegie Mellon University</h3><p class="role">MS, Automated Sciences: Biological Experimentation, School of Computer Science</p></div>
+          <p class="meta">Expected May 2028</p>
+        </div>
+        <div class="edu-row">
+          <div><h3>University of California, Berkeley</h3><p class="role">BS, Microbial Biology</p></div>
+          <p class="meta">2025</p>
+        </div>
+        <div class="edu-row">
+          <div><h3>University of Wisconsin-Madison</h3><p class="role">Biochemistry, first two years</p></div>
+          <p class="meta">2021 to 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap section contact">
+      <h2>Let's talk</h2>
+      <p>I'm always happy to chat about physical AI, lab automation, or deploying new tech in real operations.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:cykim522@gmail.com">cykim522@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Claire Kim, Pittsburgh, PA. Fluent in English and Korean.</p>
+  </footer>
+</body>
+</html>
