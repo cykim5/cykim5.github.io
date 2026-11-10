@@ -75,7 +75,11 @@ a:focus-visible, button:focus-visible {
   line-height: 1.4;
 }
 .masthead-links { display: flex; gap: calc(var(--unit) * 3); flex: none; }
-.masthead-links a { font-size: 0.9375rem; white-space: nowrap; }
+.masthead-links a {
+  font-size: 0.9375rem; white-space: nowrap;
+  /* Full strength underline so the links read as links at this size. */
+  text-decoration-color: currentColor;
+}
 
 /* Links */
 a {
@@ -89,20 +93,23 @@ a {
 a:hover { text-decoration-color: currentColor; }
 
 /* Three labelled columns, centered in the page. */
-main { flex: 1; min-height: 0; display: grid; place-items: center; padding: calc(var(--unit) * 3); }
+main {
+  flex: 1; min-height: 0;
+  display: grid; place-items: start center;
+  padding: calc(var(--unit) * 9) calc(var(--unit) * 4) calc(var(--unit) * 4);
+}
 
 .columns {
-  width: min(54rem, 100%);
+  width: min(62rem, 100%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: calc(var(--unit) * 8);
+  gap: calc(var(--unit) * 14);
   align-items: start;
 }
 
 .column-label {
-  margin: 0 0 calc(var(--unit) * 3);
-  padding-bottom: calc(var(--unit) * 1.5);
-  border-bottom: 1px solid var(--rule);
+  margin: 0 0 calc(var(--unit) * 5);
+  text-align: center;
   font-size: 0.8125rem; font-weight: 600;
   letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ink-muted);
