@@ -86,6 +86,20 @@
       <figure>
         <img src="images/tilt-adapter.png" alt="Computer model of the tilt stage, level on the left and tilted back on the right" width="990" height="350">
       </figure>
+
+      <div class="viewer" id="viewer">
+        <div class="viewer-controls">
+          <div class="seg" role="group" aria-label="Version">
+            <button type="button" data-version="stepper" class="is-on">Stepper</button>
+            <button type="button" data-version="linear">Linear actuator</button>
+          </div>
+          <div class="seg" id="partList" role="group" aria-label="Part"></div>
+        </div>
+        <div class="viewer-stage" id="viewerStage">
+          <p class="viewer-note" id="viewerNote">Loading the model</p>
+        </div>
+        <p class="viewer-caption">Drag to rotate, scroll to zoom. These are the printed parts, shown one at a time in the orientation they are printed in.</p>
+      </div>
       <p>A 3D printed adapter that occupies one deck slot of an Opentrons OT-2 liquid handling robot and tilts the plate so liquid pools to one side of each well. Two stepper driven cams sit under a platform pivoting on a fixed ball, giving tilt in any direction up to 17 degrees.</p>
       <p>Written as a parametric CAD model rather than drawn by hand, so dimensions regenerate from a parameter block. Before anything was printed I simulated 25 motor position combinations and checked every one for collisions and for the platform staying seated.</p>
     </div>
@@ -137,6 +151,14 @@
     </div>
   </dialog>
 
-  <script src="app.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

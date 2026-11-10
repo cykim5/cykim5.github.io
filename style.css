@@ -230,3 +230,43 @@ main {
   main { place-items: start stretch; padding: calc(var(--unit) * 5) calc(var(--unit) * 3); }
   .columns { grid-template-columns: 1fr; gap: calc(var(--unit) * 7); }
 }
+
+/* 3D part viewer */
+.viewer { margin: 0 0 calc(var(--unit) * 4); }
+
+.viewer-controls {
+  display: flex; flex-wrap: wrap; gap: calc(var(--unit) * 3);
+  margin-bottom: calc(var(--unit) * 2);
+}
+.seg { display: flex; flex-wrap: wrap; gap: calc(var(--unit) * 2); }
+.seg button {
+  font: inherit; font-size: 0.875rem; font-style: italic;
+  padding: 0; border: 0; background: transparent; cursor: pointer;
+  color: var(--ink-muted);
+  transition: color var(--transition);
+}
+.seg button:hover { color: var(--ink-strong); }
+.seg button.is-on { color: var(--ink-strong); font-style: normal; }
+
+.viewer-stage {
+  position: relative;
+  height: 20rem;
+  background: var(--paper);
+  display: grid; place-items: center;
+  touch-action: none;           /* let the orbit control own the gesture */
+}
+.viewer-stage canvas { display: block; width: 100%; height: 100%; }
+
+.viewer-note {
+  position: absolute; margin: 0;
+  font-size: 0.9375rem; font-style: italic; color: var(--ink-muted);
+}
+
+.viewer-caption {
+  margin: calc(var(--unit) * 1.5) 0 0;
+  font-size: 0.875rem; font-style: italic; color: var(--ink-muted);
+}
+
+@media (max-width: 34rem) {
+  .viewer-stage { height: 15rem; }
+}
