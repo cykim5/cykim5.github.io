@@ -29,7 +29,7 @@
 
 /* With a single typeface, numbers and dates carry the structure the
    monospace used to, so they align on tabular figures. */
-.figure, .meta, .stats dt { font-variant-numeric: tabular-nums; }
+.figure, .stats dt { font-variant-numeric: tabular-nums; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
@@ -199,49 +199,17 @@ h3 { font-family: var(--font); font-size: 1.25rem; font-weight: 600; margin: 0; 
 }
 .links a:hover { border-bottom-color: var(--color-accent); }
 
-/* Stack */
-.stack { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin: 0; }
-.stack > div {
-  display: grid; grid-template-columns: 11rem 1fr; gap: 1rem;
-  padding: 1rem 0; border-bottom: 1px solid var(--color-border); margin: 0;
+/* Sub-projects inside a project */
+.subproject {
+  grid-column: 2;
+  padding-top: 1.25rem; margin-top: 0.25rem;
+  border-top: 1px solid var(--color-border);
 }
-.stack dt {
-  font-family: var(--font); font-size: 0.8125rem;
-  color: var(--color-muted-foreground);
+.subproject h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.9375rem; font-weight: 600; color: var(--color-primary);
 }
-.stack dd { margin: 0; color: var(--color-secondary); font-size: 0.9375rem; }
-.stack > div:nth-child(odd) { border-right: 1px solid var(--color-border); padding-right: 2rem; }
-.stack > div:nth-child(even) { padding-left: 2rem; }
-
-/* Experience */
-.item { padding: 2rem 0; border-bottom: 1px solid var(--color-border); }
-.item-head {
-  display: flex; justify-content: space-between; gap: 1rem;
-  align-items: baseline; margin-bottom: 1rem;
-}
-.role { margin: 0.25rem 0 0; color: var(--color-muted-foreground); font-size: 0.9375rem; }
-.meta {
-  margin: 0; font-family: var(--font); font-size: 0.75rem;
-  color: var(--color-muted-foreground); text-align: right; white-space: nowrap;
-}
-.item ul { margin: 0; padding-left: 1.125rem; }
-.item li { margin-bottom: 0.5rem; color: var(--color-secondary); }
-.item li::marker { color: var(--color-accent); }
-
-/* Education */
-.edu { padding-top: 2.5rem; }
-.edu-title {
-  font-family: var(--font); font-size: 0.875rem; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase;
-  color: var(--color-muted-foreground); margin: 0 0 1rem;
-}
-.edu-row {
-  display: flex; justify-content: space-between; gap: 1rem;
-  align-items: baseline; padding: 0.875rem 0;
-  border-bottom: 1px solid var(--color-border);
-}
-.edu-row:last-child { border-bottom: 0; }
-.school { margin: 0; font-weight: 600; color: var(--color-primary); }
+.subproject p { margin: 0; color: var(--color-secondary); }
 
 /* Contact */
 .contact {
@@ -261,18 +229,12 @@ h3 { font-family: var(--font); font-size: 1.25rem; font-weight: 600; margin: 0; 
 @media (max-width: 64rem) {
   .stats { grid-template-columns: repeat(2, 1fr); }
   .project { grid-template-columns: 1fr; gap: 1.25rem; }
-  .project-head, .project > p, .project > .links, .project-img { grid-column: 1; }
+  .project-head, .project > p, .project > .links, .project-img,
+  .subproject { grid-column: 1; }
 }
 
 @media (max-width: 48rem) {
   .hero { padding-top: 3.5rem; }
-  .nav nav a[href="#stack"] { display: none; }
-  .stack { grid-template-columns: 1fr; }
-  .stack > div:nth-child(odd) { border-right: 0; padding-right: 0; }
-  .stack > div:nth-child(even) { padding-left: 0; }
-  .stack > div { grid-template-columns: 1fr; gap: 0.25rem; }
-  .item-head, .edu-row { flex-direction: column; gap: 0.25rem; }
-  .meta { text-align: left; white-space: normal; }
 }
 
 @media (max-width: 30rem) {

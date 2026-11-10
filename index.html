@@ -18,8 +18,7 @@
       <a href="#top" class="logo">Claire Kim</a>
       <nav aria-label="Sections">
         <a href="#projects">Projects</a>
-        <a href="#stack">Stack</a>
-        <a href="#experience">Experience</a>
+        <a href="resume.pdf">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -41,6 +40,7 @@
         </p>
         <div class="cta">
           <a class="btn btn-primary" href="mailto:cykim522@gmail.com">Email me</a>
+          <a class="btn" href="resume.pdf">Resume</a>
           <a class="btn" href="https://github.com/cykim5" target="_blank" rel="noopener">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
         </div>
@@ -99,27 +99,20 @@
 
       <article class="project">
         <div class="project-head">
-          <h3>Biological Workflow Map</h3>
-          <p class="tags"><span>Taxonomy</span><span>Python</span><span>Data modeling</span></p>
+          <h3>Lab Automation Assessment</h3>
+          <p class="tags"><span>Taxonomy</span><span>Python</span><span>Cost modeling</span><span>JavaScript</span></p>
         </div>
-        <p>A map of 264 wet-lab workflows across eight domains, built so that every workflow has exactly one place. Each is filed by what it produces, which is the only attribute that does not overlap, so the structure holds where field-based and technique-based classifications collapse.</p>
-        <p>It is the base layer for assessing which laboratory work is worth automating. Feasibility and cost are scored against it rather than built into it, so the structure stays stable as robots improve.</p>
-      </article>
+        <p>A system for deciding which work in a laboratory is worth automating. A lab describes what it does, that description resolves to known workflows, and each one is then scored for feasibility and for return. Two pieces are built so far.</p>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Automation Assessment</h3>
-          <p class="tags"><span>JavaScript</span><span>Scoring model</span></p>
+        <div class="subproject">
+          <h4>Biological Workflow Map</h4>
+          <p>A map of 264 wet-lab workflows across eight domains, built so that every workflow has exactly one place. Each is filed by what it produces, which is the only attribute that does not overlap, so the structure holds where field-based and technique-based classifications collapse. It is the base layer: feasibility and cost are scored against it rather than built into it, so the structure stays stable as robots improve.</p>
         </div>
-        <p>A tool that ranks which tasks in a small manufacturing operation to automate first. Each task is scored on robot feasibility (action, object, environment) and on business fit from payback period and strategic value, then placed into quick wins, strategic bets and tasks to skip.</p>
-      </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Lab Automation Payback</h3>
-          <p class="tags"><span>JavaScript</span><span>Cost modeling</span></p>
+        <div class="subproject">
+          <h4>Payback Calculator</h4>
+          <p>Estimates when automating a laboratory step pays for itself, from sample volume, hands-on time, rerun rates, equipment cost and running costs. It shows what drives the savings and the sample volume at which automation starts to make sense.</p>
         </div>
-        <p>Estimates when automating a laboratory step pays for itself, from sample volume, hands-on time, rerun rates, equipment cost and running costs. It shows what drives the savings and the sample volume at which automation starts to make sense.</p>
       </article>
 
       <article class="project">
@@ -131,127 +124,13 @@
       </article>
     </section>
 
-    <section id="stack" class="section wrap">
-      <h2>Stack</h2>
-      <dl class="stack">
-        <div>
-          <dt>Languages</dt>
-          <dd>Python, R, JavaScript, Google Apps Script</dd>
-        </div>
-        <div>
-          <dt>Hardware and CAD</dt>
-          <dd>CadQuery, FDM 3D printing, stepper and linear actuators, Raspberry Pi</dd>
-        </div>
-        <div>
-          <dt>Lab automation</dt>
-          <dd>Opentrons OT-2, liquid handling, LIMS workflows, SOP authoring through QA</dd>
-        </div>
-        <div>
-          <dt>AI and data</dt>
-          <dd>LLM agents and tool use, knowledge graphs, statistical analysis in R</dd>
-        </div>
-        <div>
-          <dt>Design and delivery</dt>
-          <dd>Figma, Git, AI coding tools for rapid prototyping</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section id="experience" class="section wrap">
-      <h2>Experience</h2>
-
-      <article class="item">
-        <div class="item-head">
-          <div>
-            <h3>RLWRLD</h3>
-            <p class="role">Robotics Transformation Consulting Intern</p>
-          </div>
-          <p class="meta">Physical AI startup</p>
-        </div>
-        <ul>
-          <li>Benchmarked existing video annotation tools, found none fit the workflow, and prototyped a replacement with bulk upload, automatic file sorting and vision model annotation.</li>
-          <li>Leadership asked to productize it. I led a two week sprint with two interns plus engineers and IT, cutting three hours of manual work per hour of footage to under thirty minutes of review, with a team of ten using it daily.</li>
-          <li>Built a task prioritization framework scoring automation feasibility (action, object, environment) against business fit, working on site across seven locations of a major retail chain.</li>
-          <li>Developed a pilot-to-scale roadmap for deployment across 150+ locations by 2028 and presented it to the client's executive team.</li>
-        </ul>
-      </article>
-
-      <article class="item">
-        <div class="item-head">
-          <div>
-            <h3>BillionToOne</h3>
-            <p class="role">Clinical Laboratory Associate II</p>
-          </div>
-          <p class="meta">Cancer diagnostics, Menlo Park, CA</p>
-        </div>
-        <ul>
-          <li>Diagnosed a bottleneck in plasma isolation and identified a centrifuge optimization that reduced process time by 31%.</li>
-          <li>Proposed moving sample storage to 2D barcoded matrix tubes for automated liquid handling and traceability. Approved as a Q4 2025 core company initiative, cutting processing time 37.5% per batch.</li>
-          <li>Supported automation of cfDNA extraction on Hamilton platforms, and worked across automation, data systems, IT and QA to connect the engineering change to how the lab actually ran.</li>
-        </ul>
-      </article>
-
-      <article class="item">
-        <div class="item-head">
-          <div>
-            <h3>Samsung Biologics</h3>
-            <p class="role">Global Intern</p>
-          </div>
-          <p class="meta">Songdo, South Korea, 2025</p>
-        </div>
-        <ul>
-          <li>Built a centralized database unifying 2,000+ filter specifications from five manufacturing plants.</li>
-          <li>Updated filter integrity testing protocols to reduce false failures, lowering material waste and cost.</li>
-        </ul>
-      </article>
-
-      <article class="item">
-        <div class="item-head">
-          <div>
-            <h3>Research</h3>
-            <p class="role">Isayev Lab (CMU), UC Berkeley, Korea University, UW-Madison</p>
-          </div>
-          <p class="meta">2022 to present</p>
-        </div>
-        <ul>
-          <li>LLM agent project at the Isayev Lab, Carnegie Mellon.</li>
-          <li>Statistical analysis in R on avian influenza spread, co-authored preprint (LeBoa et al., 2025).</li>
-          <li>Synthetic biology, nanocatalyst synthesis and stem cell research across three laboratories.</li>
-        </ul>
-      </article>
-
-      <div class="edu">
-        <h3 class="edu-title">Education</h3>
-        <div class="edu-row">
-          <div>
-            <p class="school">Carnegie Mellon University</p>
-            <p class="role">MS, Automated Sciences: Biological Experimentation, School of Computer Science</p>
-          </div>
-          <p class="meta">Expected May 2028</p>
-        </div>
-        <div class="edu-row">
-          <div>
-            <p class="school">University of California, Berkeley</p>
-            <p class="role">BS, Microbial Biology</p>
-          </div>
-          <p class="meta">2025</p>
-        </div>
-        <div class="edu-row">
-          <div>
-            <p class="school">University of Wisconsin-Madison</p>
-            <p class="role">Biochemistry, first two years</p>
-          </div>
-          <p class="meta">2021 to 2023</p>
-        </div>
-      </div>
-    </section>
-
     <section id="contact" class="contact">
       <div class="wrap">
         <h2>Get in touch</h2>
         <p>Happy to talk about lab automation, physical AI deployment, or getting a prototype to the point where other people rely on it.</p>
         <div class="cta">
           <a class="btn btn-primary" href="mailto:cykim522@gmail.com">cykim522@gmail.com</a>
+          <a class="btn btn-onDark" href="resume.pdf">Resume</a>
           <a class="btn btn-onDark" href="https://github.com/cykim5" target="_blank" rel="noopener">GitHub</a>
           <a class="btn btn-onDark" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
         </div>
