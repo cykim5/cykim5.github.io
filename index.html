@@ -25,41 +25,66 @@
 
   <main>
     <h1 class="sr-only">Projects by Claire Kim</h1>
-    <ul class="grid">
-      <li>
-        <button type="button" class="tile" data-open="p1" aria-haspopup="dialog">
-          <span class="tile-title">OT-2 Tilting Plate Adapter</span>
-          <span class="tile-kind">Lab hardware, CAD and 3D printing</span>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="tile" data-open="p2" aria-haspopup="dialog">
-          <span class="tile-title">Gene-ius</span>
-          <span class="tile-kind">AI agent for genetic variants</span>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="tile" data-open="p3" aria-haspopup="dialog">
-          <span class="tile-title">Lab Automation Assessment</span>
-          <span class="tile-kind">Taxonomy and cost modeling</span>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="tile" data-open="p4" aria-haspopup="dialog">
-          <span class="tile-title">Pool App and MeowBox</span>
-          <span class="tile-kind">Product and design</span>
-        </button>
-      </li>
-    </ul>
+    <div class="columns">
+
+      <section class="column" aria-labelledby="col-hardware">
+        <h2 class="column-label" id="col-hardware">Hardware</h2>
+        <ul>
+          <li>
+            <button type="button" class="tile" data-open="p1" aria-haspopup="dialog">
+              <span class="tile-title">Two-Axis Tilt Stage</span>
+              <span class="tile-kind">Motion hardware for an Opentrons lab robot</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="column" aria-labelledby="col-software">
+        <h2 class="column-label" id="col-software">Software</h2>
+        <ul>
+          <li>
+            <button type="button" class="tile" data-open="p2" aria-haspopup="dialog">
+              <span class="tile-title">Gene-ius</span>
+              <span class="tile-kind">AI agent for interpreting genetic variants</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="tile" data-open="p3" aria-haspopup="dialog">
+              <span class="tile-title">Lab Automation Planner</span>
+              <span class="tile-kind">Deciding what to automate, and how</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="column" aria-labelledby="col-ventures">
+        <h2 class="column-label" id="col-ventures">Ventures</h2>
+        <ul>
+          <li>
+            <button type="button" class="tile" data-open="p4" aria-haspopup="dialog">
+              <span class="tile-title">KIVO</span>
+              <span class="tile-kind">Conversational AI kiosk agent</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="tile" data-open="p5" aria-haspopup="dialog">
+              <span class="tile-title">MeowBox</span>
+              <span class="tile-kind">Pitch competition winner</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+    </div>
   </main>
 
   <dialog id="p1" class="sheet" aria-labelledby="p1-title">
     <div class="sheet-inner">
-      <button type="button" class="close" data-close aria-label="Close">×</button>
-      <h2 id="p1-title">OT-2 Tilting Plate Adapter</h2>
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+      <h2 id="p1-title">Two-Axis Tilt Stage</h2>
       <p class="sheet-kind">CadQuery, Python, 3D printing, stepper control</p>
       <figure>
-        <img src="images/tilt-adapter.png" alt="Computer model of the tilt adapter, level on the left and tilted back on the right" width="990" height="350">
+        <img src="images/tilt-adapter.png" alt="Computer model of the tilt stage, level on the left and tilted back on the right" width="990" height="350">
       </figure>
       <p>A 3D printed adapter that occupies one deck slot of an Opentrons OT-2 liquid handling robot and tilts the plate so liquid pools to one side of each well. Two stepper driven cams sit under a platform pivoting on a fixed ball, giving tilt in any direction up to 17 degrees.</p>
       <p>Written as a parametric CAD model rather than drawn by hand, so dimensions regenerate from a parameter block. Before anything was printed I simulated 25 motor position combinations and checked every one for collisions and for the platform staying seated.</p>
@@ -68,7 +93,7 @@
 
   <dialog id="p2" class="sheet" aria-labelledby="p2-title">
     <div class="sheet-inner">
-      <button type="button" class="close" data-close aria-label="Close">×</button>
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p2-title">Gene-ius</h2>
       <p class="sheet-kind">LLM agents, knowledge graphs, Python, team of 5</p>
       <p>An AI agent that helps laboratories interpret genetic variants of uncertain significance, which account for roughly a third of variants in ClinVar. Across 23 retina and heart genes it ranks which variants to test first, then answers whether a variant is harmful, how it breaks the protein, which disease follows, and what treatment strategy might fit.</p>
@@ -82,8 +107,8 @@
 
   <dialog id="p3" class="sheet" aria-labelledby="p3-title">
     <div class="sheet-inner">
-      <button type="button" class="close" data-close aria-label="Close">×</button>
-      <h2 id="p3-title">Lab Automation Assessment</h2>
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+      <h2 id="p3-title">Lab Automation Planner</h2>
       <p class="sheet-kind">Taxonomy, Python, cost modeling, JavaScript</p>
       <p>A system for deciding which work in a laboratory is worth automating. A lab describes what it does, that description resolves to known workflows, and each one is then scored for feasibility and for return. Two pieces are built so far.</p>
       <h3>Biological Workflow Map</h3>
@@ -95,11 +120,20 @@
 
   <dialog id="p4" class="sheet" aria-labelledby="p4-title">
     <div class="sheet-inner">
-      <button type="button" class="close" data-close aria-label="Close">×</button>
-      <h2 id="p4-title">Pool App and MeowBox</h2>
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+      <h2 id="p4-title">KIVO</h2>
+      <p class="sheet-kind">Conversational AI, customer discovery</p>
+      <p>A conversational AI kiosk agent, built first for restaurants, where it takes orders and handles upselling in place of a help desk.</p>
+      <p>I am running customer discovery to decide which industry to expand into next, scoring candidates on what the client gains, on market size and growth, and on how hard the integration would be.</p>
+    </div>
+  </dialog>
+
+  <dialog id="p5" class="sheet" aria-labelledby="p5-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+      <h2 id="p5-title">MeowBox</h2>
       <p class="sheet-kind">Product, Figma</p>
-      <p>Co-founded Pool App as product and UI/UX lead, defining user needs, prioritizing features and designing the workflows and prototypes.</p>
-      <p>MeowBox won its pitch competition and shipped a working build.</p>
+      <p>MeowBox won its pitch competition. I designed the product in Figma and shipped a working build.</p>
     </div>
   </dialog>
 
