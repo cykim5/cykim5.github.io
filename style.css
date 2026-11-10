@@ -10,8 +10,9 @@
   --paper: #FCFCFA;
   --accent: #1A4D8F;       /* links only */
 
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  --sans: "Inter", system-ui, -apple-system, sans-serif;
+  /* One typeface for every letter on the page. Swap this single line to
+     change the whole site, and the font link in index.html with it. */
+  --font: "Newsreader", Georgia, "Times New Roman", serif;
 
   /* Spacing rhythm: every vertical gap is a multiple of this. */
   --unit: 0.5rem;
@@ -24,9 +25,10 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-family: var(--font);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -70,7 +72,7 @@ a:focus-visible {
 .masthead { margin-bottom: calc(var(--unit) * 14); }
 
 h1 {
-  font-family: var(--serif);
+  font-family: var(--font);
   font-size: clamp(2.25rem, 5vw, 3rem);
   font-weight: 500;
   line-height: 1.1;
@@ -81,7 +83,8 @@ h1 {
 
 .standfirst {
   margin: 0;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
+  font-style: italic;
   color: var(--ink-muted);
 }
 
@@ -90,10 +93,10 @@ h1 {
   margin: 0 0 calc(var(--unit) * 7);
   padding-bottom: calc(var(--unit) * 1.5);
   border-bottom: 1px solid var(--rule);
-  font-family: var(--sans);
-  font-size: 0.75rem;
+  font-family: var(--font);
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -103,7 +106,7 @@ h1 {
 .entry:last-child { margin-bottom: 0; }
 
 .entry h3 {
-  font-family: var(--serif);
+  font-family: var(--font);
   font-size: clamp(1.5rem, 3vw, 1.875rem);
   font-weight: 500;
   line-height: 1.2;
@@ -114,8 +117,8 @@ h1 {
 
 .entry-meta {
   margin: 0 0 calc(var(--unit) * 4);
-  font-size: 0.875rem;
-  letter-spacing: 0.01em;
+  font-size: 0.9375rem;
+  font-style: italic;
   color: var(--ink-muted);
 }
 
@@ -125,7 +128,7 @@ h1 {
 .entry p:last-child { margin-bottom: 0; }
 
 .entry h4 {
-  font-family: var(--serif);
+  font-family: var(--font);
   font-size: 1.1875rem;
   font-weight: 600;
   line-height: 1.3;
@@ -160,7 +163,7 @@ a:hover { text-decoration-color: currentColor; }
   flex-wrap: wrap;
   gap: calc(var(--unit) * 4);
   margin-top: calc(var(--unit) * 4);
-  font-size: 0.9375rem;
+  font-size: 1rem;
 }
 
 /* Footer */
@@ -168,7 +171,7 @@ a:hover { text-decoration-color: currentColor; }
   margin-top: calc(var(--unit) * 16);
   padding-top: calc(var(--unit) * 4);
   border-top: 1px solid var(--rule);
-  font-size: 0.9375rem;
+  font-size: 1rem;
 }
 .footer-links {
   display: flex;
@@ -179,12 +182,12 @@ a:hover { text-decoration-color: currentColor; }
 .footer-note {
   margin: 0;
   color: var(--ink-muted);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
 }
 
 /* Mobile */
 @media (max-width: 40rem) {
-  body { font-size: 1rem; }
+  body { font-size: 1.0625rem; }
   .page {
     padding: calc(var(--unit) * 8) calc(var(--unit) * 3) calc(var(--unit) * 8);
   }
