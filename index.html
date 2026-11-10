@@ -4,144 +4,118 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Claire Kim</title>
-  <meta name="description" content="Claire Kim. MS at Carnegie Mellon. Building automation and applied AI for laboratory and physical systems.">
+  <meta name="description" content="Claire Kim. Projects in laboratory automation, applied AI and physical systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to main content</a>
-
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a href="#top" class="logo">Claire Kim</a>
-      <nav aria-label="Sections">
-        <a href="#projects">Projects</a>
-        <a href="resume.pdf">Resume</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <header class="bar">
+    <span class="name">Claire Kim</span>
+    <nav class="bar-links" aria-label="Links">
+      <a href="resume.pdf">Resume</a>
+      <a href="mailto:cykim522@gmail.com">Email</a>
+      <a href="https://github.com/cykim5" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="wrap">
-        <p class="eyebrow">MS Automated Sciences / Carnegie Mellon SCS</p>
-        <h1>I build automation for labs and physical systems, then make it survive daily use.</h1>
-        <p class="lede">
-          Hardware, software and the operational work in between: CAD and 3D printed
-          instrumentation, AI agents over scientific data, and the deployment planning
-          that decides what should be automated in the first place.
-        </p>
-        <p class="lede">
-          Seeking <strong>Summer 2027</strong> internships in automation, robotics
-          deployment and applied AI.
-        </p>
-        <div class="cta">
-          <a class="btn btn-primary" href="mailto:cykim522@gmail.com">Email me</a>
-          <a class="btn" href="resume.pdf">Resume</a>
-          <a class="btn" href="https://github.com/cykim5" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </section>
+  <main>
+    <h1 class="sr-only">Projects by Claire Kim</h1>
+    <ul class="grid">
 
-    <section class="proof" aria-labelledby="proof-heading">
-      <div class="wrap">
-        <h2 id="proof-heading" class="sr-only">Selected results</h2>
-        <dl class="stats">
-          <div>
-            <dd><span class="figure">6x</span></dd>
-            <dt>Faster video review after I prototyped and shipped an annotation tool</dt>
-          </div>
-          <div>
-            <dd><span class="figure">38</span></dd>
-            <dt>Proven disease variants found in the top 500, against 18 for AlphaMissense</dt>
-          </div>
-          <div>
-            <dd><span class="figure">25</span></dd>
-            <dt>Motor positions verified in simulation before any part was printed</dt>
-          </div>
-          <div>
-            <dd><span class="figure">264</span></dd>
-            <dt>Laboratory workflows mapped into a single non-overlapping structure</dt>
-          </div>
-        </dl>
-      </div>
-    </section>
+      <li>
+        <button type="button" class="tile" data-open="p1" aria-haspopup="dialog">
+          <span class="tile-num">01</span>
+          <span class="tile-title">OT-2 Tilting Plate Adapter</span>
+          <span class="tile-kind">Lab hardware / CAD</span>
+        </button>
+      </li>
 
-    <section id="projects" class="section wrap">
-      <h2>Projects</h2>
+      <li>
+        <button type="button" class="tile" data-open="p2" aria-haspopup="dialog">
+          <span class="tile-num">02</span>
+          <span class="tile-title">Gene-ius</span>
+          <span class="tile-kind">AI agent / Genomics</span>
+        </button>
+      </li>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>OT-2 Tilting Plate Adapter</h3>
-          <p class="tags"><span>CadQuery</span><span>Python</span><span>3D printing</span><span>Stepper control</span></p>
-        </div>
-        <img class="project-img" src="images/tilt-adapter.png" alt="Computer model of the tilt adapter, level on the left and tilted back on the right" width="990" height="350" loading="lazy">
-        <p>A 3D printed adapter that occupies one deck slot of an Opentrons OT-2 liquid handling robot and tilts the plate so liquid pools to one side of each well. Two stepper driven cams sit under a platform pivoting on a fixed ball, giving tilt in any direction up to 17 degrees.</p>
-        <p>Written as a parametric CAD model rather than drawn by hand, so dimensions regenerate from a parameter block. Before anything was printed I simulated 25 motor position combinations and checked every one for collisions and for the platform staying seated.</p>
-      </article>
+      <li>
+        <button type="button" class="tile" data-open="p3" aria-haspopup="dialog">
+          <span class="tile-num">03</span>
+          <span class="tile-title">Lab Automation Assessment</span>
+          <span class="tile-kind">Taxonomy / Cost modeling</span>
+        </button>
+      </li>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Gene-ius</h3>
-          <p class="tags"><span>LLM agents</span><span>Knowledge graphs</span><span>Python</span><span>Team of 5</span></p>
-        </div>
-        <p>An AI agent that helps laboratories interpret genetic variants of uncertain significance, which account for roughly a third of variants in ClinVar. Across 23 retina and heart genes it ranks which variants to test first, then answers whether a variant is harmful, how it breaks the protein, which disease follows, and what treatment strategy might fit.</p>
-        <p>Evaluated with a time machine design: the model sees only data available in January 2023 and is graded on variants experts resolved afterwards, so no variant is ever evidence for itself. It found 38 later-proven disease variants in its top 500, against 18 for AlphaMissense.</p>
-        <p class="links">
-          <a href="https://gene-ius-app.vercel.app" target="_blank" rel="noopener">Live demo</a>
-          <a href="https://github.com/cykim5/Gene-ius" target="_blank" rel="noopener">GitHub</a>
-        </p>
-      </article>
+      <li>
+        <button type="button" class="tile" data-open="p4" aria-haspopup="dialog">
+          <span class="tile-num">04</span>
+          <span class="tile-title">Pool App and MeowBox</span>
+          <span class="tile-kind">Product / Design</span>
+        </button>
+      </li>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Lab Automation Assessment</h3>
-          <p class="tags"><span>Taxonomy</span><span>Python</span><span>Cost modeling</span><span>JavaScript</span></p>
-        </div>
-        <p>A system for deciding which work in a laboratory is worth automating. A lab describes what it does, that description resolves to known workflows, and each one is then scored for feasibility and for return. Two pieces are built so far.</p>
-
-        <div class="subproject">
-          <h4>Biological Workflow Map</h4>
-          <p>A map of 264 wet-lab workflows across eight domains, built so that every workflow has exactly one place. Each is filed by what it produces, which is the only attribute that does not overlap, so the structure holds where field-based and technique-based classifications collapse. It is the base layer: feasibility and cost are scored against it rather than built into it, so the structure stays stable as robots improve.</p>
-        </div>
-
-        <div class="subproject">
-          <h4>Payback Calculator</h4>
-          <p>Estimates when automating a laboratory step pays for itself, from sample volume, hands-on time, rerun rates, equipment cost and running costs. It shows what drives the savings and the sample volume at which automation starts to make sense.</p>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-head">
-          <h3>Pool App and MeowBox</h3>
-          <p class="tags"><span>Product</span><span>Figma</span></p>
-        </div>
-        <p>Co-founded Pool App as product and UI/UX lead, defining user needs, prioritizing features and designing the workflows and prototypes. MeowBox won its pitch competition and shipped a working build.</p>
-      </article>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="wrap">
-        <h2>Get in touch</h2>
-        <p>Happy to talk about lab automation, physical AI deployment, or getting a prototype to the point where other people rely on it.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="mailto:cykim522@gmail.com">cykim522@gmail.com</a>
-          <a class="btn btn-onDark" href="resume.pdf">Resume</a>
-          <a class="btn btn-onDark" href="https://github.com/cykim5" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-onDark" href="https://www.linkedin.com/in/claire--kim" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </section>
+    </ul>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <p>Claire Kim / Pittsburgh, Pennsylvania / English and Korean</p>
+  <dialog id="p1" class="sheet" aria-labelledby="p1-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">Close</button>
+      <p class="sheet-num">01</p>
+      <h2 id="p1-title">OT-2 Tilting Plate Adapter</h2>
+      <p class="tags"><span>CadQuery</span><span>Python</span><span>3D printing</span><span>Stepper control</span></p>
+      <img class="sheet-img" src="images/tilt-adapter.png" alt="Computer model of the tilt adapter, level on the left and tilted back on the right" width="990" height="350">
+      <p>A 3D printed adapter that occupies one deck slot of an Opentrons OT-2 liquid handling robot and tilts the plate so liquid pools to one side of each well. Two stepper driven cams sit under a platform pivoting on a fixed ball, giving tilt in any direction up to 17 degrees.</p>
+      <p>Written as a parametric CAD model rather than drawn by hand, so dimensions regenerate from a parameter block. Before anything was printed I simulated 25 motor position combinations and checked every one for collisions and for the platform staying seated.</p>
     </div>
-  </footer>
+  </dialog>
+
+  <dialog id="p2" class="sheet" aria-labelledby="p2-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">Close</button>
+      <p class="sheet-num">02</p>
+      <h2 id="p2-title">Gene-ius</h2>
+      <p class="tags"><span>LLM agents</span><span>Knowledge graphs</span><span>Python</span><span>Team of 5</span></p>
+      <p>An AI agent that helps laboratories interpret genetic variants of uncertain significance, which account for roughly a third of variants in ClinVar. Across 23 retina and heart genes it ranks which variants to test first, then answers whether a variant is harmful, how it breaks the protein, which disease follows, and what treatment strategy might fit.</p>
+      <p>Evaluated with a time machine design: the model sees only data available in January 2023 and is graded on variants experts resolved afterwards, so no variant is ever evidence for itself. It found 38 later-proven disease variants in its top 500, against 18 for AlphaMissense.</p>
+      <p class="links">
+        <a href="https://gene-ius-app.vercel.app" target="_blank" rel="noopener">Live demo</a>
+        <a href="https://github.com/cykim5/Gene-ius" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
+  </dialog>
+
+  <dialog id="p3" class="sheet" aria-labelledby="p3-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">Close</button>
+      <p class="sheet-num">03</p>
+      <h2 id="p3-title">Lab Automation Assessment</h2>
+      <p class="tags"><span>Taxonomy</span><span>Python</span><span>Cost modeling</span><span>JavaScript</span></p>
+      <p>A system for deciding which work in a laboratory is worth automating. A lab describes what it does, that description resolves to known workflows, and each one is then scored for feasibility and for return. Two pieces are built so far.</p>
+      <div class="subproject">
+        <h3>Biological Workflow Map</h3>
+        <p>A map of 264 wet-lab workflows across eight domains, built so that every workflow has exactly one place. Each is filed by what it produces, which is the only attribute that does not overlap, so the structure holds where field-based and technique-based classifications collapse. It is the base layer: feasibility and cost are scored against it rather than built into it, so the structure stays stable as robots improve.</p>
+      </div>
+      <div class="subproject">
+        <h3>Payback Calculator</h3>
+        <p>Estimates when automating a laboratory step pays for itself, from sample volume, hands-on time, rerun rates, equipment cost and running costs. It shows what drives the savings and the sample volume at which automation starts to make sense.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="p4" class="sheet" aria-labelledby="p4-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">Close</button>
+      <p class="sheet-num">04</p>
+      <h2 id="p4-title">Pool App and MeowBox</h2>
+      <p class="tags"><span>Product</span><span>Figma</span></p>
+      <p>Co-founded Pool App as product and UI/UX lead, defining user needs, prioritizing features and designing the workflows and prototypes.</p>
+      <p>MeowBox won its pitch competition and shipped a working build.</p>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
 </body>
 </html>
