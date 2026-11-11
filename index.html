@@ -95,8 +95,8 @@
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p1-title">Protocol Agent for Instrument Workflows</h2>
       <p class="sheet-kind">LLM agents, Python, instrument protocols, Isayev Lab, CMU</p>
-      <p>An LLM agent that turns a scientist's plain language description of an experiment into a structured, executable instrument protocol. A researcher states the intent, the measurements and the conditions, and the agent produces the steps and parameters the instrument needs, so the protocol becomes a precise, repeatable object a machine can run rather than a paragraph in a notebook.</p>
-      <p>In progress at the Isayev Lab at CMU, built for the CLARIOstar plate reader. I worked through the manufacturer's control interfaces and found the gap the project has to close: the documented ActiveX and DDE commands can only run a protocol that already exists, and the file a protocol exports to is undocumented. Generating a valid protocol, and checking its settings against what the device can actually do, is therefore the problem itself rather than a detail of it.</p>
+      <p>An LLM agent that turns a plain language description of an experiment into a structured, executable instrument protocol, so it becomes something a machine can run rather than a paragraph in a notebook.</p>
+      <p>In progress at the Isayev Lab at CMU, built for the CLARIOstar plate reader. The hard part is generating a protocol the instrument will actually accept, since its documented control commands can only run protocols that already exist.</p>
     </div>
   </dialog>
 
@@ -123,9 +123,8 @@
         <p class="viewer-caption">Drag to rotate, scroll to zoom. These are the printed parts, shown one at a time in the orientation they are printed in.</p>
       </div>
 
-      <p>Custom motion hardware for an Opentrons liquid handling robot. The stage tilts a plate along two axes partway through a run, so liquid pools to one side of each well at an angle a fixed deck position cannot reach. Because it is driven from protocol code, tilting becomes an ordinary step inside an automated workflow, called the same way pipetting or incubation is.</p>
-      <p>Designed and built with Raspberry Pi motor control for CMU lab automation coursework. It covers the whole device integration path: mechanical design that fits the robot deck, motor control, and the software interface that lets a protocol drive the hardware repeatably. Two stepper driven cams sit under a platform pivoting on a fixed ball, giving tilt in any direction up to 17 degrees.</p>
-      <p>The geometry is a parametric CAD model rather than a hand drawing, so dimensions regenerate from a parameter block. Before anything was printed I simulated 25 motor position combinations and checked every one for collisions and for the platform staying seated.</p>
+      <p>Custom motion hardware for an Opentrons liquid handling robot. The stage tilts a plate along two axes partway through a run, so liquid pools to one side of each well. Because it is driven from protocol code, tilting becomes an ordinary step in an automated workflow, called the same way pipetting is.</p>
+      <p>Designed and built with Raspberry Pi motor control for CMU lab automation coursework, covering the whole device integration path: mechanical design that fits the robot deck, motor control, and the software interface a protocol drives it through. Two stepper driven cams under a platform on a fixed ball give tilt in any direction up to 17 degrees, checked across 25 motor positions in simulation before anything was printed.</p>
     </div>
   </dialog>
 
@@ -134,7 +133,7 @@
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p3-title">Gene-ius</h2>
       <p class="sheet-kind">LLM agents, knowledge graphs, Python, team of 5</p>
-      <p>An AI agent that helps laboratories interpret genetic variants of uncertain significance, which account for roughly a third of variants in ClinVar. Across 23 retina and heart genes it ranks which variants to test first, then answers whether a variant is harmful, how it breaks the protein, which disease follows, and what treatment strategy might fit. That ranking hands a lab a short, evidence backed list to take into physical testing.</p>
+      <p>An AI agent that helps laboratories interpret genetic variants of uncertain significance, which account for roughly a third of variants in ClinVar. Across 23 retina and heart genes it ranks which variants to test first and explains whether a variant is harmful, how it breaks the protein, and which disease follows. The ranking hands a lab a short, evidence backed list to take into physical testing.</p>
       <p>Evaluated with a time machine design: the model sees only data available in January 2023 and is graded on variants experts resolved afterwards, so no variant is ever evidence for itself. It found 38 later proven disease variants in its top 500, against 18 for AlphaMissense.</p>
       <p class="sheet-links">
         <a href="https://gene-ius-app.vercel.app" target="_blank" rel="noopener">Live demo</a>
@@ -148,8 +147,8 @@
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p4-title">Production Data Platform</h2>
       <p class="sheet-kind">Python, PostgreSQL, AWS, AI agents, RLWRLD</p>
-      <p>A production data platform I built from scratch at RLWRLD, a robotics company in Seoul, to turn robot training footage into structured, model ready data. It replaced annotation the team had been doing by hand in spreadsheets, logging worker movements every ten seconds. Pipelines carry each recording through annotation, quality control and analytics, so the team can see which tasks have enough data and which still need more.</p>
-      <p>In production it cut three hours of manual work per hour of footage to under thirty minutes of review, and a team of ten was using it daily by the end of my internship. It became the data layer the robot foundation model training depended on.</p>
+      <p>A production data platform I built from scratch at RLWRLD, a robotics company in Seoul, turning robot training footage into structured, model ready data. It replaced annotation the team had been doing by hand in spreadsheets, and its pipelines carry each recording through annotation, quality control and analytics.</p>
+      <p>It cut three hours of manual work per hour of footage to under thirty minutes of review, and a team of ten was using it daily by the end of my internship. It became the data layer the robot foundation model training depended on.</p>
     </div>
   </dialog>
 
@@ -158,8 +157,8 @@
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p5-title">Cancer Screening Cost-Effectiveness Model</h2>
       <p class="sheet-kind">Python, Monte Carlo simulation, SEER data, health economics, team project</p>
-      <p>A simulation that asks whether annual multi-cancer early detection screening is worth its cost, and for whom. These tests screen for many cancers from a single blood draw. We built an individual based Monte Carlo simulation that follows simulated people month by month and compares two worlds: usual care, and usual care plus annual screening. I built the lung cancer model. Each world runs separately for a lower risk and a higher risk group, because a test can be a poor buy on average and a good buy for people at high risk.</p>
-      <p>Cancer incidence, stage at diagnosis and survival come from SEER data, with test sensitivity by stage, treatment costs and quality of life weights layered on top. The model totals cost and QALYs in each world, where one QALY is a year of life in full health. The headline number is the ICER, the extra dollars spent for each extra QALY gained, reported by risk group, checked against the published results of Raoof et al. (2025), and stress tested to show which assumptions move the answer.</p>
+      <p>A simulation asking whether annual multi-cancer early detection screening is worth its cost, and for whom. It follows simulated people month by month and compares usual care against usual care plus annual screening, run separately for a lower risk and a higher risk group, because a test can be a poor buy on average and a good buy for people at high risk. I built the lung cancer model.</p>
+      <p>Incidence, stage at diagnosis and survival come from SEER data, with test sensitivity by stage, treatment costs and quality of life weights on top. The headline number is the extra cost per extra year of healthy life gained, reported by risk group and checked against the published results of Raoof et al. (2025).</p>
       <p class="sheet-links">
         <a href="https://github.com/wenxin-tang/MCED-Cost-Effectiveness-Analysis" target="_blank" rel="noopener">Source</a>
       </p>
@@ -171,8 +170,8 @@
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p6-title">KIVO</h2>
       <p class="sheet-kind">Conversational AI agents, product, CMU Hack a Startup finalist, team of 3</p>
-      <p>A conversational AI agent layer for physical spaces, starting with hotels and airports. It picks up at a front desk, on an in room TV, or at an airport gate, and carries context between them, so a hotel can offer a personal service without adding front desk load and a traveler can get an answer without hunting through apps.</p>
-      <p>Built with Alice Kim and Umang Pandey for CMU Hack a Startup, where KIVO reached the top 15. We ran customer discovery with hotel, airport and retail operators, and our scoring of those interviews put hotels first, which is where the pitch focuses.</p>
+      <p>A conversational AI agent layer for physical spaces, starting with hotels and airports. It picks up at a front desk, an in room TV or an airport gate and carries context between them.</p>
+      <p>Built with Alice Kim and Umang Pandey for CMU Hack a Startup, where KIVO reached the top 15. Customer discovery with hotel, airport and retail operators put hotels first, which is where the pitch focuses.</p>
     </div>
   </dialog>
 
@@ -181,8 +180,7 @@
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p7-title">MeowBox</h2>
       <p class="sheet-kind">Market strategy, user research, business model, pitch competition winner</p>
-      <p>A TikTok style mini games product where I led market strategy and research. I sized the market, mapped the competitive landscape and built the business model for a two sided product connecting game creators with casual players. The analysis put the opportunity at $6.7B and gave the team a clear view of which segment to enter first.</p>
-      <p>It won its pitch competition. It also changed how I start things: earlier product work had taught me what it costs to build before validating demand, so this one began with user research, and the product decisions followed from what we found.</p>
+      <p>A TikTok style mini games product where I led market strategy and research. I sized the market, mapped the competitors and built the business model for a two sided product connecting game creators with casual players, putting the opportunity at $6.7B and showing which segment to enter first. It won its pitch competition.</p>
     </div>
   </dialog>
 
