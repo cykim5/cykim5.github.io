@@ -26,7 +26,7 @@ const stage = document.getElementById("viewerStage");
 const note = document.getElementById("viewerNote");
 const partList = document.getElementById("partList");
 
-let renderer, scene, camera, controls, mesh, frameId;
+let renderer, scene, camera, controls, mesh;
 let started = false;
 let currentVersion = "stepper";
 const loader = new STLLoader();
@@ -48,9 +48,8 @@ function init() {
   stage.appendChild(renderer.domElement);
 
   controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.08;
   controls.enablePan = false;
+  controls.addEventListener("change", render);
 
   scene.add(new THREE.HemisphereLight(0xffffff, 0x9a9a95, 2.1));
   const key = new THREE.DirectionalLight(0xffffff, 1.5);
@@ -64,6 +63,10 @@ function init() {
   window.addEventListener("resize", resize);
 }
 
+function render() {
+  if (renderer) renderer.render(scene, camera);
+}
+
 function resize() {
   if (!renderer) return;
   const w = stage.clientWidth;
@@ -72,12 +75,7 @@ function resize() {
   renderer.setSize(w, h, false);
   camera.aspect = w / h;
   camera.updateProjectionMatrix();
-}
-
-function animate() {
-  frameId = requestAnimationFrame(animate);
-  controls.update();
-  renderer.render(scene, camera);
+  render();
 }
 
 function show(geometry) {
@@ -117,6 +115,7 @@ function show(geometry) {
   controls.minDistance = size * 0.35;
   controls.maxDistance = size * 2.5;
   controls.update();
+  render();
 }
 
 function load(file) {
@@ -169,7 +168,9 @@ document.querySelectorAll("[data-version]").forEach((b) => {
 // Only spin up WebGL when the popup is actually opened.
 export function startViewer() {
   if (started) {
-    resize();
+    // The canvas has no size while the dialog is closed, so it has to be
+    // measured and drawn again every time the dialog reopens.
+    requestAnimationFrame(() => { resize(); render(); });
     return;
   }
   started = true;
@@ -177,13 +178,7 @@ export function startViewer() {
     init();
     renderPartButtons();
     load(VERSIONS[currentVersion][0].file);
-    animate();
   } catch (err) {
     setNote("3D preview is not available in this browser.");
   }
-}
-
-export function stopViewer() {
-  if (frameId) cancelAnimationFrame(frameId);
-  frameId = null;
 }

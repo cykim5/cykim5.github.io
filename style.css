@@ -20,7 +20,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html, body { height: 100%; }
+html { height: 100%; }
 
 body {
   margin: 0;
@@ -32,7 +32,9 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow: hidden;              /* the grid fits the viewport */
+  /* Fills the window when the content is short, and scrolls rather
+     than clipping when the window is too small for it. */
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -92,9 +94,9 @@ a {
 }
 a:hover { text-decoration-color: currentColor; }
 
-/* Three labelled columns, centered in the page. */
+/* Four labelled columns, centered in the page. */
 main {
-  flex: 1; min-height: 0;
+  flex: 1 0 auto;
   display: grid; place-items: start center;
   padding: calc(var(--unit) * 4) calc(var(--unit) * 4) calc(var(--unit) * 4);
 }
@@ -229,8 +231,6 @@ main {
 /* Phones: three columns of prose do not fit, so they stack and the
    page is allowed to scroll. */
 @media (max-width: 34rem) {
-  html, body { height: auto; }
-  body { overflow: auto; }
   .masthead { flex-direction: column; align-items: flex-start; gap: calc(var(--unit) * 1); }
   :root { --masthead: 6.5rem; }
   .standfirst { display: none; }

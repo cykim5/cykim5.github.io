@@ -39,9 +39,4 @@ document.querySelectorAll("dialog.sheet").forEach((sheet) => {
       event.clientY >= box.top && event.clientY <= box.bottom;
     if (!inside) sheet.close();
   });
-
-  // Stop the render loop when the popup closes, including via Escape.
-  sheet.addEventListener("close", () => {
-    if (viewer && sheet.querySelector("#viewer")) viewer.stopViewer();
-  });
 });
