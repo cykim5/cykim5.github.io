@@ -10,12 +10,14 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 const VERSIONS = {
   stepper: [
+    { file: "assembly_stepper.stl", label: "Assembled" },
     { file: "base_2motor.stl", label: "Base" },
     { file: "platform_2motor.stl", label: "Platform" },
     { file: "cam_disc_2motor.stl", label: "Cam disc" },
     { file: "ball_cap_2motor.stl", label: "Ball cap" },
   ],
   linear: [
+    { file: "assembly_linear.stl", label: "Assembled" },
     { file: "base.stl", label: "Base" },
     { file: "platform_6dish.stl", label: "Platform" },
     { file: "tip_cap.stl", label: "Tip cap" },

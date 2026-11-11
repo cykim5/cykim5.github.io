@@ -94,7 +94,7 @@ a {
 }
 a:hover { text-decoration-color: currentColor; }
 
-/* Four labelled columns, centered in the page. */
+/* Three labelled columns, centered in the page. */
 main {
   flex: 1 0 auto;
   display: grid; place-items: start center;
@@ -102,10 +102,10 @@ main {
 }
 
 .columns {
-  width: min(74rem, 100%);
+  width: min(64rem, 100%);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: calc(var(--unit) * 8);
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--unit) * 10);
   align-items: start;
 }
 
@@ -208,8 +208,8 @@ main {
   font-size: 1rem;
 }
 
-/* Below this, four columns leave titles too narrow to read. */
-@media (max-width: 64rem) {
+/* Below this, three columns leave titles too narrow to read. */
+@media (max-width: 56rem) {
   .columns {
     grid-template-columns: repeat(2, 1fr);
     gap: calc(var(--unit) * 7) calc(var(--unit) * 6);
