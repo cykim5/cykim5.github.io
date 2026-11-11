@@ -95,8 +95,8 @@
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p1-title">Protocol Agent for Instrument Workflows</h2>
       <p class="sheet-kind">LLM agents, Python, instrument protocols, Isayev Lab, CMU</p>
-      <p>An LLM agent that turns a scientist's plain language description of an experiment into a structured, executable instrument protocol. A researcher states the intent, the measurements and the conditions, and the agent works out the steps and parameters the instrument needs. The protocol stops being a paragraph in a notebook and becomes a precise, repeatable object a machine can run.</p>
-      <p>It checks requested settings against what the device can actually do before a protocol is final, built for the CLARIOstar plate reader. That check is the core of the project, because a protocol that reads well and fails on the device helps nobody.</p>
+      <p>An LLM agent that turns a scientist's plain language description of an experiment into a structured, executable instrument protocol. A researcher states the intent, the measurements and the conditions, and the agent produces the steps and parameters the instrument needs, so the protocol becomes a precise, repeatable object a machine can run rather than a paragraph in a notebook.</p>
+      <p>In progress at the Isayev Lab at CMU, built for the CLARIOstar plate reader. I worked through the manufacturer's control interfaces and found the gap the project has to close: the documented ActiveX and DDE commands can only run a protocol that already exists, and the file a protocol exports to is undocumented. Generating a valid protocol, and checking its settings against what the device can actually do, is therefore the problem itself rather than a detail of it.</p>
     </div>
   </dialog>
 
