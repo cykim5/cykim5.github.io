@@ -45,8 +45,8 @@
         </ul>
       </section>
 
-      <section class="column" aria-labelledby="col-data">
-        <h2 class="column-label" id="col-data">Data and AI</h2>
+      <section class="column" aria-labelledby="col-ai">
+        <h2 class="column-label" id="col-ai">AI for discovery</h2>
         <ul>
           <li>
             <button type="button" class="tile" data-open="p3" aria-haspopup="dialog">
@@ -54,6 +54,18 @@
               <span class="tile-kind">Ranking genetic variants for lab-in-the-loop validation</span>
             </button>
           </li>
+          <li>
+            <button type="button" class="tile" data-open="p9" aria-haspopup="dialog">
+              <span class="tile-title">OncoTarget Scout</span>
+              <span class="tile-kind">Drug target prioritization for a treatment resistant lung cancer subgroup</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="column" aria-labelledby="col-analysis">
+        <h2 class="column-label" id="col-analysis">Analysis and data systems</h2>
+        <ul>
           <li>
             <button type="button" class="tile" data-open="p4" aria-haspopup="dialog">
               <span class="tile-title">Production Data Platform</span>
@@ -144,6 +156,7 @@
       <p class="sheet-links">
         <a href="https://gene-ius-app.vercel.app" target="_blank" rel="noopener">Live demo</a>
         <a href="https://github.com/cykim5/Gene-ius" target="_blank" rel="noopener">Source</a>
+        <a href="https://github.com/cykim5/time-machine-eval" target="_blank" rel="noopener">Evaluation method</a>
       </p>
     </div>
   </dialog>
@@ -199,6 +212,20 @@
       <p>The modelling uses mixed effects regression, which separates differences between markets from variation within them. Published as a preprint on SSRN as LeBoa et al. (2025) and submitted to Building and Environment.</p>
       <p class="sheet-links">
         <a href="https://doi.org/10.2139/ssrn.5711630" target="_blank" rel="noopener">Preprint</a>
+      </p>
+    </div>
+  </dialog>
+
+  <dialog id="p9" class="sheet" aria-labelledby="p9-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+      <h2 id="p9-title">OncoTarget Scout</h2>
+      <p class="sheet-kind">R, Python, public multi-omics data, in progress</p>
+      <p>A target prioritization pipeline for one group of lung adenocarcinoma patients: tumors carrying STK11 or KEAP1 mutations. These tumors respond poorly to immunotherapy and to chemotherapy, carry worse outcomes across treatments, and have no approved therapy aimed at the alteration itself. The pipeline produces a ranked shortlist of candidate genes, a plain language reason card behind each rank, and a validation plan naming the cell lines and assays that would confirm or kill the top candidates.</p>
+      <p>A gene has to earn its rank across five independent layers of evidence, so that nothing ranks on one signal alone: activity in tumors against healthy lung in TCGA, functional dependency in DepMap CRISPR screens, expression in the malignant cells themselves rather than the immune cells around them, a safety window against vital normal tissue in GTEx, and the link to patient survival. Three checks are fixed before the ranking runs, including a time split that asks whether the method would have surfaced the KRAS G12C inhibitors before they were approved.</p>
+      <p>Phase 0. The design and the scaffold are in place and no results have been produced yet. Results will go up with the code that generated them.</p>
+      <p class="sheet-links">
+        <a href="https://github.com/cykim5/oncotarget-scout" target="_blank" rel="noopener">Source</a>
       </p>
     </div>
   </dialog>

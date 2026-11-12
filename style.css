@@ -1,5 +1,5 @@
-/* Projects as a 2x2 grid that fills the viewport. Detail opens in a
-   dialog, so the page itself never scrolls. One typeface throughout. */
+/* Projects in four labelled columns, grouped by what the work produces.
+   Detail opens in a dialog. One typeface throughout. */
 
 :root {
   --ink: #16181C;
@@ -102,10 +102,10 @@ main {
 }
 
 .columns {
-  width: min(64rem, 100%);
+  width: min(76rem, 100%);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: calc(var(--unit) * 10);
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--unit) * 7);
   align-items: start;
 }
 
@@ -208,11 +208,13 @@ main {
   font-size: 1rem;
 }
 
-/* Below this, three columns leave titles too narrow to read. */
-@media (max-width: 56rem) {
+/* Below this, four columns leave titles too narrow to read. Two by two
+   keeps the pairs even, which three columns plus an orphan would not. */
+@media (max-width: 72rem) {
   .columns {
+    width: min(56rem, 100%);
     grid-template-columns: repeat(2, 1fr);
-    gap: calc(var(--unit) * 7) calc(var(--unit) * 6);
+    gap: calc(var(--unit) * 8) calc(var(--unit) * 7);
   }
 }
 
