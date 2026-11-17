@@ -42,6 +42,24 @@
               <span class="tile-kind">Device integration and motion control for a liquid handler</span>
             </button>
           </li>
+          <li>
+            <button type="button" class="tile" data-open="p10" aria-haspopup="dialog">
+              <span class="tile-title">Biological Workflow Map</span>
+              <span class="tile-kind">264 wet-lab workflows, each with exactly one address</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="tile" data-open="p11" aria-haspopup="dialog">
+              <span class="tile-title">Automation Assessment</span>
+              <span class="tile-kind">Screening which tasks a robot should take on first</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="tile" data-open="p12" aria-haspopup="dialog">
+              <span class="tile-title">Lab Automation Payback</span>
+              <span class="tile-kind">When automating a workflow step pays for itself</span>
+            </button>
+          </li>
         </ul>
       </section>
 
@@ -230,6 +248,50 @@
       <p>The work also caught its own errors. Phase 1's top hit turned out to be an artifact of dividing by a near-zero baseline, and Phase 2 fixed it with shrinkage. Phase 4's one promising lead, three related antidiabetic drugs that had ranked together, did not survive the corrected box. KRAS, EGFR, and CD274 rank in the middle of the subgroup ranking, which is the correct result. The data shows they are not subgroup-selective targets.</p>
       <p class="sheet-links">
         <a href="https://github.com/cykim5/oncotarget-scout" target="_blank" rel="noopener">Source</a>
+      </p>
+    </div>
+  </dialog>
+
+  <dialog id="p10" class="sheet" aria-labelledby="p10-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+      <h2 id="p10-title">Biological Workflow Map</h2>
+      <p class="sheet-kind">Python, YAML, interactive map, public</p>
+      <p>A map of what happens at a biology bench, sorted so that every workflow has exactly one place. Eight domains, 264 workflows, four levels deep. It is the base layer for a larger question, which is what in a given lab is worth automating and what the return would be. A lab describes its work in its own words, and those words have to resolve to a shared set of workflows before anything can be scored or compared across labs.</p>
+      <p>Biology already has plenty of ways to group lab work and none of them is mutually exclusive, because each mixes several axes at the same level. One ELISA is immunology, cancer biology and bioprocess at once. The rule here is that every workflow is filed under the kind of thing it exists to produce, because output is the one attribute that does not overlap. A workflow yields purified RNA, or an engineered cell line, or a number, but never two at once. Field, technique and instrument all overlap, so they became filters over the map instead of branches in it.</p>
+      <p>The hard cases are the test. PCR run to make DNA for a later step is construction, and qPCR run to produce a number is measurement. A gel run to recover a band is cleanup, and a gel run to report a size is analysis. Centrifuging, mixing and incubating are not in the map at all, because a step that happens inside everything is not a workflow. Automation feasibility is deliberately not a branch either. It is an attribute measured against the map, so a workflow that is manual today and automated in three years does not move, only its score changes.</p>
+      <p>This is a synthesis rather than a published standard, and no existing taxonomy covers wet-lab work as a whole, so there is nothing to validate it against directly. The weaknesses are written down with it: the measurement domain is the widest, two domains share a soft seam where staining a slide and imaging it feel like one activity, depth is uneven, and the tie-breaks are reasoned rather than cited. The test that would settle it is assigning several hundred published protocols to leaves and measuring how many land in exactly one, how many fit two or more, and how many fit none, with two people assigning independently to see whether the rule is teachable.</p>
+      <p class="sheet-links">
+        <a href="https://cykim5.github.io/bio-workflow-taxonomy/" target="_blank" rel="noopener">Interactive map</a>
+        <a href="https://github.com/cykim5/bio-workflow-taxonomy" target="_blank" rel="noopener">Source</a>
+      </p>
+    </div>
+  </dialog>
+
+  <dialog id="p11" class="sheet" aria-labelledby="p11-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+      <h2 id="p11-title">Automation Assessment</h2>
+      <p class="sheet-kind">JavaScript, no build step, public</p>
+      <p>A first screen for deciding which tasks to automate with robots, meant to be used before talking to any vendor. Most robot deployments do not fail because the robot cannot do the work. They fail because someone picked the wrong task, one that looked easy and was not, or one that worked and never paid back.</p>
+      <p>Every task gets two scores. Feasibility averages three ratings: how complex the motion is, how predictable the object is, and how controlled the workspace is. Business fit is 60 percent financial return, which comes from payback time, and 40 percent strategic value, which covers what money does not, like a role nobody can hire for or a safety risk. Tasks then land in one of four groups: quick wins, strategic bets, easy but low value, and deprioritize.</p>
+      <p>It is written around a small manufacturer's task list, though the three feasibility axes are not specific to manufacturing. The limits are stated in the tool rather than left for the reader to find. Payback assumes the robot covers all the listed hours, when real deployments ramp up slowly, and the ratings are judgment calls. It is a shortlist before an on-site assessment, not a final answer, and the example tasks and costs are illustrative rather than client data.</p>
+      <p class="sheet-links">
+        <a href="https://github.com/cykim5/automation-assessment" target="_blank" rel="noopener">Source</a>
+      </p>
+    </div>
+  </dialog>
+
+  <dialog id="p12" class="sheet" aria-labelledby="p12-title">
+    <div class="sheet-inner">
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+      <h2 id="p12-title">Lab Automation Payback</h2>
+      <p class="sheet-kind">JavaScript, no build step, public</p>
+      <p>A calculator for when automating one lab workflow step pays for itself. Lab automation is usually pitched on throughput, but the decision gets made on cost, and whether a liquid handler or an automated sample store pays back depends mostly on volume, on how much hands-on time it actually removes, and on the running costs people leave out of the pitch.</p>
+      <p>Net savings per year is labor time saved plus fewer reruns, minus the service contract and the extra consumables. Payback is upfront cost divided by monthly net savings. It also reports staff time freed, in hours and in full-time equivalents, and the break-even volume, meaning the samples per day needed to pay back within three years, with a five-year cash chart and a chart of how payback moves as volume changes.</p>
+      <p>What it does not capture is part of the tool too: traceability, audit readiness, consistency between operators, and room to grow without hiring. Those are often the real reasons to automate, and when payback is borderline they usually decide it. It also ignores validation downtime and the early learning curve. The presets use illustrative numbers, not data from any company.</p>
+      <p class="sheet-links">
+        <a href="https://github.com/cykim5/lab-automation-payback" target="_blank" rel="noopener">Source</a>
       </p>
     </div>
   </dialog>
