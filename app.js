@@ -1,26 +1,20 @@
 // Tiles open their detail in a native dialog, which brings the focus
 // trap, Escape handling and focus restore with it.
 
-let viewer = null;
-
-// The 3D viewer is only fetched when the tilt stage popup is opened, so
-// nothing on the landing page pays for it.
-async function openViewer() {
-  try {
-    if (!viewer) viewer = await import("./viewer.js");
-    viewer.startViewer();
-  } catch (err) {
-    const note = document.getElementById("viewerNote");
-    if (note) note.textContent = "3D preview could not be loaded.";
-  }
-}
-
 document.querySelectorAll("[data-open]").forEach((tile) => {
   tile.addEventListener("click", () => {
     const sheet = document.getElementById(tile.dataset.open);
     if (!sheet || typeof sheet.showModal !== "function") return;
+    // A tile inside an open dialog opens its project on top of the
+    // group. Dialogs stack natively, so closing the top one reveals
+    // the group again with focus back on the tile that was clicked.
+    // The flag only exists so the second backdrop can be lighter.
+    if (document.querySelector("dialog.sheet[open]")) {
+      sheet.dataset.nested = "";
+    } else {
+      delete sheet.dataset.nested;
+    }
     sheet.showModal();
-    if (sheet.querySelector("#viewer")) openViewer();
   });
 });
 

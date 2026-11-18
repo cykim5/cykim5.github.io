@@ -201,6 +201,22 @@ main {
   display: block; width: 100%; height: auto;
   background: #FFFFFF;
 }
+.sheet figcaption {
+  margin-top: calc(var(--unit) * 1.5);
+  font-size: 0.875rem; font-style: italic; color: var(--ink-muted);
+}
+
+/* A grouped tile lists its projects, each opening its own dialog on
+   top of this one. The nested backdrop is lighter so two stacked
+   dialogs do not darken the page twice over. */
+.group-list {
+  list-style: none; margin: calc(var(--unit) * 5) 0 0; padding: 0;
+  display: flex; flex-direction: column; gap: calc(var(--unit) * 4);
+  border-top: 1px solid var(--rule);
+  padding-top: calc(var(--unit) * 5);
+}
+.group-list li { display: flex; min-width: 0; }
+.sheet[data-nested]::backdrop { background: rgba(11, 12, 14, 0.2); }
 
 .sheet-links {
   display: flex; flex-wrap: wrap; gap: calc(var(--unit) * 4);
@@ -240,42 +256,4 @@ main {
   .columns { grid-template-columns: 1fr; gap: calc(var(--unit) * 7); }
 }
 
-/* 3D part viewer */
-.viewer { margin: 0 0 calc(var(--unit) * 4); }
 
-.viewer-controls {
-  display: flex; flex-wrap: wrap; gap: calc(var(--unit) * 3);
-  margin-bottom: calc(var(--unit) * 2);
-}
-.seg { display: flex; flex-wrap: wrap; gap: calc(var(--unit) * 2); }
-.seg button {
-  font: inherit; font-size: 0.875rem; font-style: italic;
-  padding: 0; border: 0; background: transparent; cursor: pointer;
-  color: var(--ink-muted);
-  transition: color var(--transition);
-}
-.seg button:hover { color: var(--ink-strong); }
-.seg button.is-on { color: var(--ink-strong); font-style: normal; }
-
-.viewer-stage {
-  position: relative;
-  height: 20rem;
-  background: var(--paper);
-  display: grid; place-items: center;
-  touch-action: none;           /* let the orbit control own the gesture */
-}
-.viewer-stage canvas { display: block; width: 100%; height: 100%; }
-
-.viewer-note {
-  position: absolute; margin: 0;
-  font-size: 0.9375rem; font-style: italic; color: var(--ink-muted);
-}
-
-.viewer-caption {
-  margin: calc(var(--unit) * 1.5) 0 0;
-  font-size: 0.875rem; font-style: italic; color: var(--ink-muted);
-}
-
-@media (max-width: 34rem) {
-  .viewer-stage { height: 15rem; }
-}

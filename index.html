@@ -43,21 +43,9 @@
             </button>
           </li>
           <li>
-            <button type="button" class="tile" data-open="p10" aria-haspopup="dialog">
-              <span class="tile-title">Biological Workflow Map</span>
-              <span class="tile-kind">264 wet-lab workflows, each with exactly one address</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="tile" data-open="p11" aria-haspopup="dialog">
-              <span class="tile-title">Automation Assessment</span>
-              <span class="tile-kind">Screening which tasks a robot should take on first</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="tile" data-open="p12" aria-haspopup="dialog">
-              <span class="tile-title">Lab Automation Payback</span>
-              <span class="tile-kind">When automating a workflow step pays for itself</span>
+            <button type="button" class="tile" data-open="p13" aria-haspopup="dialog">
+              <span class="tile-title">Lab Automation Playbook</span>
+              <span class="tile-kind">A map of 264 wet-lab workflows, a screen for robot fit, and a payback model</span>
             </button>
           </li>
         </ul>
@@ -142,25 +130,16 @@
       <h2 id="p2-title">Two-Axis Tilt Stage for Opentrons</h2>
       <p class="sheet-kind">Hardware control, Opentrons, Python, lab automation</p>
       <figure>
-        <img src="images/tilt-adapter.png" alt="Computer model of the tilt stage, level on the left and tilted back on the right" width="990" height="350">
+        <img src="images/tilt-v5.gif" alt="Animation of the two tray tilt stage moving through its pitch and roll range" width="640" height="480" loading="lazy">
+        <figcaption>Ideal rigid body motion from the exported V5 geometry, not a physical test.</figcaption>
       </figure>
 
-      <div class="viewer" id="viewer">
-        <div class="viewer-controls">
-          <div class="seg" role="group" aria-label="Version">
-            <button type="button" data-version="stepper" class="is-on">Stepper</button>
-            <button type="button" data-version="linear">Linear actuator</button>
-          </div>
-          <div class="seg" id="partList" role="group" aria-label="Part"></div>
-        </div>
-        <div class="viewer-stage" id="viewerStage">
-          <p class="viewer-note" id="viewerNote">Loading the model</p>
-        </div>
-        <p class="viewer-caption">Drag to rotate, scroll to zoom. The assembled view is the device as built, exported from the CAD model. The separate parts are shown in the orientation they print in.</p>
-      </div>
-
-      <p>Custom motion hardware for an Opentrons liquid handling robot. The stage tilts a plate along two axes partway through a run, so liquid pools to one side of each well. Because it is driven from protocol code, tilting becomes an ordinary step in an automated workflow, called the same way pipetting is.</p>
-      <p>Designed and built with Raspberry Pi motor control for CMU lab automation coursework, covering the whole device integration path: mechanical design that fits the robot deck, motor control, and the software interface a protocol drives it through. Two stepper driven cams under a platform on a fixed ball give tilt in any direction up to 17 degrees, checked across 25 motor positions in simulation before anything was printed.</p>
+      <p>Custom motion hardware for an Opentrons liquid handling robot. The stage tilts plates along two axes partway through a run, so liquid pools to one side of each well. Because it is driven from protocol code, tilting becomes an ordinary step in an automated workflow, called the same way pipetting is.</p>
+      <p>The current design is V5, a two motor synchronized tray mechanism. One motor drives a shared pitch frame through a 4:1 gear reduction. A second motor rides on that frame and meshes with both tray gears, so the trays roll together at the same nominal angle rather than independently. Target range is 15 degrees either side of level on each axis, including combined commands. Two AS5600 magnetic encoders read the angle back, one on pitch and one on a single tray's roll. Nine printed parts, six flanged bearings, two 28BYJ-48 motors, and no springs, cams or connecting rods on either axis.</p>
+      <p>Designed and built with Raspberry Pi motor control for CMU lab automation coursework, covering the whole device integration path: mechanical design that fits the robot deck, motor control, and the software interface a protocol drives it through. The geometry has been checked for mesh validity, collisions and installation paths, and the ideal corner heights are computed rather than measured. Printed fit, backlash, wiring clearance and loaded performance still have to be checked on the bench.</p>
+      <p class="sheet-links">
+        <a href="tilt-v5/motion_viewer.html" target="_blank" rel="noopener">Interactive model</a>
+      </p>
     </div>
   </dialog>
 
@@ -253,6 +232,65 @@
       </p>
     </div>
   </dialog>
+
+  <dialog id="p13" class="sheet" aria-labelledby="p13-title">
+
+    <div class="sheet-inner">
+
+      <button type="button" class="close" data-close aria-label="Close">&#215;</button>
+
+      <h2 id="p13-title">Lab Automation Playbook</h2>
+
+      <p class="sheet-kind">Python, JavaScript, public, three repositories</p>
+
+      <p>Three tools that answer one question in order: what work does a lab actually do, which of it should a robot take on, and does that pay back. Each one stands alone, and each one feeds the next. The map gives every workflow a single address so labs can be compared at all. The assessment screens those workflows for whether a robot is a sensible fit. The payback model puts a number on the ones that pass.</p>
+
+      <p>The order matters because most robot deployments do not fail on capability. They fail on choosing the wrong task, and that choice is usually made before anyone has written down what the lab does.</p>
+
+      <ul class="group-list">
+
+        <li>
+
+          <button type="button" class="tile" data-open="p10" aria-haspopup="dialog">
+
+            <span class="tile-title">Biological Workflow Map</span>
+
+            <span class="tile-kind">264 wet-lab workflows, each with exactly one address</span>
+
+          </button>
+
+        </li>
+
+        <li>
+
+          <button type="button" class="tile" data-open="p11" aria-haspopup="dialog">
+
+            <span class="tile-title">Automation Assessment</span>
+
+            <span class="tile-kind">Screening which tasks a robot should take on first</span>
+
+          </button>
+
+        </li>
+
+        <li>
+
+          <button type="button" class="tile" data-open="p12" aria-haspopup="dialog">
+
+            <span class="tile-title">Lab Automation Payback</span>
+
+            <span class="tile-kind">When automating a workflow step pays for itself</span>
+
+          </button>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </dialog>
+
 
   <dialog id="p10" class="sheet" aria-labelledby="p10-title">
     <div class="sheet-inner">
