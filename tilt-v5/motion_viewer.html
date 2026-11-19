@@ -4,7 +4,7 @@
 .range-head{font-size:12px;color:#475467}
 .controls output{font-variant-numeric:tabular-nums;color:#101828;font-weight:600}
 .grow{flex:1 1 auto}
-button{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;font:500 14px system-ui;border-radius:6px;cursor:pointer;transition:background 140ms ease,border-color 140ms ease}
+button{display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 14px;font:500 13px system-ui;border-radius:6px;cursor:pointer;transition:background 140ms ease,border-color 140ms ease}
 #play{background:#1A4D8F;color:#fff;border:1px solid #1A4D8F}
 #play:hover{background:#143E73;border-color:#143E73}
 #play:active{background:#10305A}
@@ -19,8 +19,8 @@ input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:3px;ba
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;margin-top:-7.5px;border-radius:50%;background:#1A4D8F;border:2px solid #fff;box-shadow:0 0 0 1px #1A4D8F}
 input[type=range]::-moz-range-track{height:5px;border-radius:3px;background:#DCE1E8}
 input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#1A4D8F;border:2px solid #fff;box-shadow:0 0 0 1px #1A4D8F}
-.toggle{flex-direction:row;align-items:center;gap:8px;min-height:44px;font-size:13px;color:#344054}
-.toggle input{width:18px;height:18px;accent-color:#1A4D8F;margin:0}
+.toggle{display:inline-flex;align-items:center;gap:8px;min-height:36px;font-size:13px;color:#344054;line-height:1}
+.toggle input{flex:none;width:16px;height:16px;accent-color:#1A4D8F;margin:0}
 @media (prefers-reduced-motion:reduce){button{transition:none}}canvas{display:block;width:100%;aspect-ratio:1000/620;height:auto;background:#FCFCFA;border-radius:8px;touch-action:none}</style>
 <section><div class="controls"><label class="range"><span class="range-head">Pitch <output id="pv">0°</output></span><input id="p" type="range" min="-15" max="15" step=".5" value="0"></label><label class="range"><span class="range-head">Roll <output id="rv">0°</output></span><input id="r" type="range" min="-15" max="15" step=".5" value="0"></label><label class="toggle"><input id="cut" type="checkbox">Show mechanism (hide tray floors)</label><span class="grow"></span><button id="play" type="button">Play tilt cycle</button><button id="reset" type="button">Reset</button></div><canvas id="view"></canvas></section>
 <script>
