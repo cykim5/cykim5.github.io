@@ -31,21 +31,21 @@
         <h2 class="column-label" id="col-lab">Autonomous lab systems</h2>
         <ul>
           <li>
-            <button type="button" class="tile" data-open="p1" aria-haspopup="dialog">
-              <span class="tile-title">Protocol Agent for Instrument Workflows</span>
-              <span class="tile-kind">Natural language intent to executable lab protocol</span>
-            </button>
-          </li>
-          <li>
             <button type="button" class="tile" data-open="p2" aria-haspopup="dialog">
-              <span class="tile-title">Two-Axis Tilt Stage for Opentrons</span>
-              <span class="tile-kind">Device integration and motion control for a liquid handler</span>
+              <span class="tile-title">Custom Motion Hardware for a Liquid Handling Robot</span>
+              <span class="tile-kind">Two-axis tilt stage for an Opentrons deck</span>
             </button>
           </li>
           <li>
             <button type="button" class="tile" data-open="p13" aria-haspopup="dialog">
               <span class="tile-title">Lab Automation Playbook</span>
               <span class="tile-kind">A map of 264 wet-lab workflows, a screen for robot fit, and a payback model</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="tile" data-open="p1" aria-haspopup="dialog">
+              <span class="tile-title">Protocol Agent for Instrument Workflows</span>
+              <span class="tile-kind">Natural language intent to executable lab protocol</span>
             </button>
           </li>
         </ul>
@@ -55,15 +55,15 @@
         <h2 class="column-label" id="col-ai">AI for discovery</h2>
         <ul>
           <li>
-            <button type="button" class="tile" data-open="p3" aria-haspopup="dialog">
-              <span class="tile-title">Gene-ius</span>
-              <span class="tile-kind">Ranking genetic variants for lab-in-the-loop validation</span>
-            </button>
-          </li>
-          <li>
             <button type="button" class="tile" data-open="p9" aria-haspopup="dialog">
               <span class="tile-title">OncoTarget Scout</span>
               <span class="tile-kind">Drug target prioritization for a treatment resistant lung cancer subgroup</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="tile" data-open="p3" aria-haspopup="dialog">
+              <span class="tile-title">Gene-ius</span>
+              <span class="tile-kind">Ranking genetic variants for lab-in-the-loop validation</span>
             </button>
           </li>
         </ul>
@@ -127,17 +127,25 @@
   <dialog id="p2" class="sheet" aria-labelledby="p2-title">
     <div class="sheet-inner">
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
-      <h2 id="p2-title">Two-Axis Tilt Stage for Opentrons</h2>
+      <h2 id="p2-title">Custom Motion Hardware for a Liquid Handling Robot</h2>
       <p class="sheet-kind">Hardware control, Opentrons, Python, lab automation</p>
       <figure>
         <img src="images/tilt-v5.gif" alt="Animation of the two tray tilt stage moving through its pitch and roll range" width="640" height="480" loading="lazy">
       </figure>
 
-      <p>Custom motion hardware for an Opentrons liquid handling robot. The stage tilts plates along two axes partway through a run, so liquid pools to one side of each well. Because it is driven from protocol code, tilting becomes an ordinary step in an automated workflow.</p>
+      <p>Built for an Opentrons liquid handling robot. The stage tilts plates along two axes partway through a run, so liquid pools to one side of each well. Because it is driven from protocol code, tilting becomes an ordinary step in an automated workflow.</p>
       <p>The current design is V5, a two motor synchronized tray mechanism. One motor drives a shared pitch frame through a 4:1 gear reduction. A second motor rides on that frame and meshes with both tray gears, so the trays roll together rather than independently. Target range is 15 degrees either side of level on each axis. Two AS5600 magnetic encoders read the angle back, one on pitch and one on a tray's roll.</p>
       <p>Designed and built with Raspberry Pi motor control for CMU lab automation coursework, covering the whole device integration path: mechanical design that fits the robot deck, motor control, and the software interface a protocol drives it through.</p>
+      <p>The printed parts, as STL.</p>
       <p class="sheet-links">
-        <a href="tilt-v5/motion_viewer.html" target="_blank" rel="noopener">Interactive model</a>
+        <a href="tilt-v5/stl/base.stl" download>Base</a>
+        <a href="tilt-v5/stl/frame.stl" download>Frame</a>
+        <a href="tilt-v5/stl/sensor_stand.stl" download>Sensor stand</a>
+        <a href="tilt-v5/stl/tray_A.stl" download>Tray A</a>
+        <a href="tilt-v5/stl/tray_b.stl" download>Tray B</a>
+        <a href="tilt-v5/stl/tray_gear_A.stl" download>Tray gear A</a>
+        <a href="tilt-v5/stl/tray_gear_B.stl" download>Tray gear B</a>
+        <a href="tilt-v5/stl/pinion.stl" download>Pinion</a>
       </p>
     </div>
   </dialog>
