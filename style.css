@@ -201,11 +201,6 @@ main {
   display: block; width: 100%; height: auto;
   background: #FFFFFF;
 }
-.sheet figcaption {
-  margin-top: calc(var(--unit) * 1.5);
-  font-size: 0.875rem; font-style: italic; color: var(--ink-muted);
-}
-
 /* A grouped tile lists its projects, each opening its own dialog on
    top of this one. The nested backdrop is lighter so two stacked
    dialogs do not darken the page twice over. */
