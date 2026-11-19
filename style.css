@@ -201,6 +201,136 @@ main {
   display: block; width: 100%; height: auto;
   background: #FFFFFF;
 }
+/* The assembled V5 model, running in the sheet rather than on a page of
+   its own. It carries the geometry inline, so the frame is pointed at it
+   only when this sheet is opened. */
+.model {
+  margin: 0 0 calc(var(--unit) * 4);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.model { position: relative; }
+.model iframe {
+  display: block;
+  width: 100%;
+  height: 34rem;
+  border: 0;
+}
+/* The geometry takes a few seconds to parse, and an empty white box for
+   that long reads as broken rather than busy. */
+.model-wait {
+  position: absolute; inset: 0; margin: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9375rem; color: var(--ink-muted);
+}
+
+/* A screenshot of the platform's own interface. Everything inside is
+   that application's styling, not this page's: internal tools are not
+   set in a book face, and a picture of one that was would not read as
+   a real screen. Nothing here applies outside .shot. */
+.shot {
+  margin: 0 0 calc(var(--unit) * 4);
+  border: 1px solid #D8DCE2;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 8px 24px rgba(16, 24, 40, 0.06);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #1F2733;
+  -webkit-font-smoothing: antialiased;
+}
+.shot * { box-sizing: border-box; }
+.shot h3, .shot h4, .shot p, .shot ul, .shot table { margin: 0; padding: 0; }
+.shot ul { list-style: none; }
+
+/* Window strip, so the figure reads as a captured screen. */
+.shot-bar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 12px;
+  background: #F2F4F7;
+  border-bottom: 1px solid #E4E7EC;
+}
+.shot-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: #D0D5DD; }
+.shot-tab {
+  margin-left: 10px; padding: 3px 10px;
+  background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 4px;
+  font-size: 11px; color: #475467;
+}
+
+.shot-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 12px 14px 10px;
+}
+.shot-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: #101828; }
+.shot-ctl { display: flex; align-items: center; gap: 6px; }
+.shot-ctl .ctl {
+  padding: 4px 9px; border: 1px solid #D0D5DD; border-radius: 5px;
+  font-size: 11px; color: #475467; background: #FFFFFF; white-space: nowrap;
+}
+.shot-ctl .avatar { width: 22px; height: 22px; border-radius: 50%; background: #C7D2E0; }
+
+.shot-tabs {
+  display: flex; gap: 18px; padding: 0 14px;
+  border-bottom: 1px solid #E4E7EC; font-size: 12px; color: #667085;
+}
+.shot-tabs span { padding: 0 0 8px; }
+.shot-tabs .on { color: #1A4D8F; box-shadow: inset 0 -2px 0 #1A4D8F; font-weight: 600; }
+
+.shot-body { padding: 14px; background: #F9FAFB; display: grid; gap: 12px; }
+
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.kpis li {
+  display: flex; flex-direction: column; gap: 1px;
+  padding: 10px 12px; background: #FFFFFF;
+  border: 1px solid #E4E7EC; border-radius: 6px;
+}
+.k-l { font-size: 10.5px; color: #667085; text-transform: uppercase; letter-spacing: 0.04em; }
+.k-v { font-size: 19px; font-weight: 600; color: #101828; font-variant-numeric: tabular-nums; }
+.k-d { font-size: 10.5px; color: #667085; }
+
+.panel { background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 6px; }
+.panel header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: 10px 12px; border-bottom: 1px solid #E4E7EC;
+}
+.panel h4 { font-size: 12.5px; font-weight: 600; color: #101828; }
+.panel .hint { font-size: 10.5px; color: #667085; }
+
+.shot table { width: 100%; border-collapse: collapse; }
+.shot thead th {
+  padding: 7px 12px; text-align: left; font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.05em; color: #98A2B3;
+  border-bottom: 1px solid #E4E7EC;
+}
+.shot tbody td { padding: 8px 12px; border-bottom: 1px solid #F2F4F7; vertical-align: middle; }
+.shot tbody tr:last-child td { border-bottom: 0; }
+.t-name { color: #344054; white-space: nowrap; }
+.t-num { text-align: right; font-variant-numeric: tabular-nums; color: #101828; white-space: nowrap; }
+.t-bar { width: 42%; }
+.track { position: relative; display: block; height: 6px; background: #EDF0F4; border-radius: 3px; }
+.fill { position: absolute; inset: 0 auto 0 0; background: #1A4D8F; border-radius: 3px; }
+/* 120 of the 180 hour axis, so the marker lands where the target is. */
+.goal { position: absolute; top: -3px; bottom: -3px; left: 66.67%; width: 1px; background: #475467; }
+.t-status { white-space: nowrap; }
+.pill {
+  display: inline-block; padding: 2px 7px; border-radius: 10px;
+  font-size: 10.5px; font-weight: 500; background: #EDF0F4; color: #475467;
+}
+.pill-warn { background: #FDF2E3; color: #8A5A17; }
+
+.spark { display: flex; align-items: flex-end; gap: 6px; height: 86px; padding: 12px; }
+.spark li { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 5px; }
+.spark .col { width: 100%; background: #1A4D8F; opacity: 0.85; border-radius: 2px 2px 0 0; }
+.spark .wk { font-size: 10px; color: #98A2B3; }
+
+@media (max-width: 34rem) {
+  .kpis { grid-template-columns: 1fr; }
+  .shot-tabs span:nth-child(n+3) { display: none; }
+  .shot-ctl .ctl:nth-child(2) { display: none; }
+}
+
 /* The protein itself, loaded only when this sheet is opened. Mol* draws
    into a box it is given, so without an explicit height it collapses to
    nothing and the sheet looks broken. */

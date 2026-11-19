@@ -15,6 +15,20 @@ function loadStructure() {
   document.head.appendChild(script);
 }
 
+// The model frame carries its geometry inline and is a couple of
+// megabytes, so the frame stays empty until the sheet it lives in is
+// opened. After that it keeps whatever the visitor set it to.
+function loadModel() {
+  const frame = document.querySelector("#p2 iframe[data-src]");
+  if (frame === null) return;
+  frame.addEventListener("load", () => {
+    const waiting = frame.parentElement.querySelector(".model-wait");
+    if (waiting !== null) waiting.remove();
+  });
+  frame.src = frame.dataset.src;
+  frame.removeAttribute("data-src");
+}
+
 // Mol* draws a small set of coloured axes in the bottom corner. They
 // belong in a structural biology tool, not on a page like this one, so
 // they go off as soon as there is a scene to turn them off in. Nothing
@@ -44,6 +58,7 @@ document.querySelectorAll("[data-open]").forEach((tile) => {
       delete sheet.dataset.nested;
     }
     if (tile.dataset.open === "p9") loadStructure();
+    if (tile.dataset.open === "p2") loadModel();
     sheet.showModal();
   });
 });
