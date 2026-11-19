@@ -378,7 +378,7 @@
     <div class="sheet-inner">
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p10-title">Biological Workflow Map</h2>
-      <p class="sheet-kind">Python, YAML, interactive map, public</p>
+      <p class="sheet-kind">Python, YAML, interactive map</p>
       <p>A map of what happens at a biology bench, sorted so that every workflow has exactly one place. Eight domains, 264 workflows, four levels deep. It is the base layer for a larger question: what in a given lab is worth automating, and what the return would be. A lab describes its work in its own words, and those words have to resolve to a shared set of workflows before anything can be scored or compared across labs.</p>
       <p>Biology already has plenty of ways to group lab work and none of them is mutually exclusive, because each mixes several axes at the same level. One ELISA is immunology, cancer biology and bioprocess at once. The rule here is that every workflow is filed under the kind of thing it exists to produce, because output is the one attribute that does not overlap. A workflow yields purified RNA, or an engineered cell line, or a number, but never two at once. Field, technique and instrument all overlap, so they became filters over the map instead of branches in it.</p>
       <p>The hard cases are the test. PCR run to make DNA for a later step is construction, and qPCR run to produce a number is measurement. A gel run to recover a band is cleanup, and a gel run to report a size is analysis. Centrifuging, mixing and incubating are not in the map at all, because a step that happens inside everything is not a workflow. Automation feasibility is not a branch either but an attribute measured against the map, so a workflow that is manual today and automated in three years does not move, only its score changes.</p>
@@ -394,7 +394,7 @@
     <div class="sheet-inner">
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p11-title">Automation Assessment</h2>
-      <p class="sheet-kind">JavaScript, no build step, public</p>
+      <p class="sheet-kind">JavaScript, no build step</p>
       <p>A first screen for deciding which tasks to automate with robots, meant to be used before talking to any vendor. Most robot deployments do not fail because the robot cannot do the work. They fail because someone picked the wrong task, one that looked easy and was not, or one that worked and never paid back.</p>
       <p>Every task gets two scores. Feasibility averages three ratings: how complex the motion is, how predictable the object is, and how controlled the workspace is. Business fit is 60 percent financial return, which comes from payback time, and 40 percent strategic value, which covers what money does not, like a role nobody can hire for or a safety risk. Tasks then land in one of four groups: quick wins, strategic bets, easy but low value, and deprioritize.</p>
       <p>It is written around a small manufacturer's task list, though the three feasibility axes are not specific to manufacturing. Payback assumes the robot covers all the listed hours, when real deployments ramp up slowly, and the example tasks and costs are illustrative rather than client data.</p>
@@ -409,7 +409,7 @@
     <div class="sheet-inner">
       <button type="button" class="close" data-close aria-label="Close">&#215;</button>
       <h2 id="p12-title">Lab Automation Payback</h2>
-      <p class="sheet-kind">JavaScript, no build step, public</p>
+      <p class="sheet-kind">JavaScript, no build step</p>
       <p>A calculator for when automating one lab workflow step pays for itself. Lab automation is usually pitched on throughput, but the decision gets made on cost, and whether a liquid handler or an automated sample store pays back depends mostly on volume, on how much hands-on time it removes, and on the running costs people leave out of the pitch.</p>
       <p>Net savings per year is labor time saved plus fewer reruns, minus the service contract and the extra consumables. Payback is upfront cost divided by monthly net savings. It also reports staff time freed, in hours and in full-time equivalents, and the break-even volume, meaning the samples per day needed to pay back within three years, plus a five-year cash chart.</p>
       <p>What it does not capture is part of the tool too: traceability, consistency between operators, and room to grow without hiring. Those are often the real reasons to automate, and when payback is borderline they usually decide it. The presets use illustrative numbers, not data from any company.</p>
