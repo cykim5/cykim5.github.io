@@ -1,6 +1,35 @@
 // Tiles open their detail in a native dialog, which brings the focus
 // trap, Escape handling and focus restore with it.
 
+// The molecular viewer is a few megabytes, so it is fetched the first
+// time someone opens the sheet that shows a structure and never on an
+// ordinary visit. If the fetch fails the sheet still reads fine; the
+// box is simply empty, and the caption still links to the entry.
+let structureAsked = false;
+function loadStructure() {
+  if (structureAsked === true) return;
+  structureAsked = true;
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/pdbe-molstar@3.11.0/build/pdbe-molstar-component.js";
+  script.addEventListener("load", () => hideViewerAxes(40));
+  document.head.appendChild(script);
+}
+
+// Mol* draws a small set of coloured axes in the bottom corner. They
+// belong in a structural biology tool, not on a page like this one, so
+// they go off as soon as there is a scene to turn them off in. Nothing
+// else depends on this working, so a failure just leaves them drawn.
+function hideViewerAxes(tries) {
+  const viewer = document.querySelector("#p9 pdbe-molstar");
+  try {
+    viewer.viewerInstance.plugin.canvas3d.setProps({
+      camera: { helper: { axes: { name: "off", params: {} } } }
+    });
+  } catch (error) {
+    if (tries > 0) setTimeout(() => hideViewerAxes(tries - 1), 500);
+  }
+}
+
 document.querySelectorAll("[data-open]").forEach((tile) => {
   tile.addEventListener("click", () => {
     const sheet = document.getElementById(tile.dataset.open);
@@ -14,6 +43,7 @@ document.querySelectorAll("[data-open]").forEach((tile) => {
     } else {
       delete sheet.dataset.nested;
     }
+    if (tile.dataset.open === "p9") loadStructure();
     sheet.showModal();
   });
 });

@@ -201,6 +201,38 @@ main {
   display: block; width: 100%; height: auto;
   background: #FFFFFF;
 }
+/* The protein itself, loaded only when this sheet is opened. Mol* draws
+   into a box it is given, so without an explicit height it collapses to
+   nothing and the sheet looks broken. */
+/* Mol* lays its own chrome out absolutely, so without a positioned,
+   clipped box of its own it measures against the whole sheet and spills
+   over the text. The caption sits outside that box for the same reason. */
+.structure-box {
+  position: relative;
+  overflow: hidden;
+  height: 22rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.structure-box pdbe-molstar { display: block; height: 100%; }
+.structure-note {
+  margin: calc(var(--unit) * 1.5) 0 0;
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+}
+
+/* The three questions the grouped tools answer, one per tile below,
+   in the same order as the tiles. Numbered because the order is the
+   point: you cannot cost a task you have not chosen. */
+.questions {
+  margin: 0 0 calc(var(--unit) * 5);
+  padding-left: calc(var(--unit) * 4);
+  font-size: 1.1875rem;
+  color: var(--ink-strong);
+}
+.questions li { margin-bottom: calc(var(--unit) * 1.5); padding-left: calc(var(--unit) * 1); }
+.questions li:last-child { margin-bottom: 0; }
+
 /* A grouped tile lists its projects, each opening its own dialog on
    top of this one. The nested backdrop is lighter so two stacked
    dialogs do not darken the page twice over. */
