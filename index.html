@@ -33,7 +33,7 @@
           <li>
             <button type="button" class="tile" data-open="p14" aria-haspopup="dialog">
               <span class="tile-title">Colony Picking and Plate Streaking in Simulation</span>
-              <span class="tile-kind">Two robot arms, one microbiology workflow, in MuJoCo</span>
+              <span class="tile-kind">Restreaking cyanobacteria plates, simulated two ways</span>
             </button>
           </li>
           <li>
@@ -139,16 +139,16 @@
         <img src="images/cyano-streak.gif" alt="A robot arm lifting the lids off two agar plates, picking a cyanobacteria colony with a plastic loop and streaking it across a fresh plate" width="320" height="240" loading="lazy">
       </figure>
 
-      <p>A simulated robot that picks one cyanobacteria colony off a plate and quadrant streaks it onto a fresh one. The colony pickers that exist are built for E. coli, and nothing streaks from plate to plate, which is why a cyanobacteria researcher still does this by hand.</p>
+      <p>Cyanobacteria labs restreak their plates by hand. The colony pickers you can buy are built for E. coli, and none of them streak from one plate to the next, so I simulated a robot that does: lids off, find a clean colony, pick it up, quadrant streak a fresh plate, lids back on.</p>
 
-      <p>Two sim versions.</p>
+      <p>I built it twice.</p>
 
       <ol class="versions">
-        <li><span class="name">Franka Panda</span>, a research arm with ideal motors. Can the workflow be done at all? 20 plates out of 20.</li>
-        <li><span class="name">SO-101</span>, the printable version, a five joint arm costing a fraction as much. Can something you could actually build do it? 4 out of 8.</li>
+        <li><span class="name">Franka Panda</span>, a research arm with ideal motors. This one was to see whether the workflow holds together at all. 20 plates out of 20.</li>
+        <li><span class="name">SO-101</span>, the printable one. Five joints, a fraction of the cost, weak servos, and a calibration error it cannot correct for because its own encoders carry the same error. 4 out of 8.</li>
       </ol>
 
-      <p>The workflow is sound, and the cheap hardware is what fails.</p>
+      <p>So the steps themselves are fine. It is the cheap arm that falls over, mostly on seating the lids and on getting a single toothpick out of the cup.</p>
 
       <p class="sheet-links">
         <a href="https://github.com/cykim5/mujoco-lab-sim" target="_blank" rel="noopener">Source</a>
