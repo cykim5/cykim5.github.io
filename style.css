@@ -201,6 +201,18 @@ main {
   display: block; width: 100%; height: auto;
   background: #FFFFFF;
 }
+/* The simulation renders at 320 by 240, so stretching it to the width
+   of the sheet would only make it soft. It sits at its own size,
+   centred. The selector has to be this specific to beat the rule above
+   that makes every figure image fill its column. */
+.sheet figure.sim { text-align: center; }
+.sheet figure.sim img {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  border: 1px solid var(--rule);
+}
+
 /* The assembled V5 model, running in the sheet rather than on a page of
    its own. It carries the geometry inline, so the frame is pointed at it
    only when this sheet is opened. */
