@@ -141,13 +141,7 @@
 
       <p>A simulated robot that picks one cyanobacteria colony off a plate and quadrant streaks it onto a fresh one. The colony pickers that exist are built for E. coli, and nothing streaks from plate to plate, which is why a cyanobacteria researcher still does this by hand.</p>
 
-      <p>Two arms ask two different questions. A Franka Panda, a research arm with ideal motors, asks whether the workflow is possible at all: 20 plates out of 20, touching the chosen colony within 0.13 mm and finding the agar surface by touch within 0.26 mm. An SO-101, a printed five joint arm costing a fraction as much, asks whether something you could actually build can do it: 4 out of 8, with weak servos, no gravity compensation, and up to half a degree of hidden calibration error per joint that the robot cannot correct for because its own encoders carry the same error.</p>
-
-      <p>The gap between those two numbers is the result. The workflow itself is sound, and the cheap hardware is what fails, in two specific places: calibration error that sets a lid down on its rim or presses the tool too deep into the agar, and toothpicks that will not separate in their cup.</p>
-
-      <p>Every hardware requirement in the project came from the simulation failing first. The arm needs gravity compensation, because without it it sags about 5 mm and misses every colony. A 90 mm lid is wider than the gripper opens, so it needs suction or a printed hook. Agar thickness varies by more than 1.5 mm between plates, so the tool has to find the surface by touch rather than assume it. The tool rack needs 3 cm of clearance in the direction the fingers close, and each tool has to be lifted its full length before the arm moves sideways: with those rules all 48 test picks came out without touching a neighbor.</p>
-
-      <p>What it cannot test is the biology. Whether the cells stick to the tool, transfer, and grow is a question for real plates.</p>
+      <p>Two arms ask two different questions. A Franka Panda, with ideal motors, asks whether the workflow is possible at all: 20 plates out of 20. An SO-101, a printed five joint arm costing a fraction as much, asks whether something you could actually build can do it: 4 out of 8. The workflow is sound, and the cheap hardware is what fails.</p>
 
       <p class="sheet-links">
         <a href="https://github.com/cykim5/mujoco-lab-sim" target="_blank" rel="noopener">Source</a>
