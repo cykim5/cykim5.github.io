@@ -375,6 +375,17 @@ main {
 .questions li { margin-bottom: calc(var(--unit) * 1.5); padding-left: calc(var(--unit) * 1); }
 .questions li:last-child { margin-bottom: 0; }
 
+/* Two numbered builds of the same thing. The name leads each one in
+   the heavier weight the page already loads, since nothing else here
+   is set in bold. */
+.versions {
+  margin: 0 0 calc(var(--unit) * 3);
+  padding-left: calc(var(--unit) * 4);
+}
+.versions li { margin-bottom: calc(var(--unit) * 2); padding-left: calc(var(--unit) * 1); }
+.versions li:last-child { margin-bottom: 0; }
+.versions .name { font-weight: 500; color: var(--ink-strong); }
+
 /* A grouped tile lists its projects, each opening its own dialog on
    top of this one. The nested backdrop is lighter so two stacked
    dialogs do not darken the page twice over. */
